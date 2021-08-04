@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Customer Details</h1>
+<h1>Users Details</h1>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
@@ -51,40 +51,31 @@
       </div>
       <div class="modal-body">
         
-      <form>
-  <div class="form-row">
+      <form action="{{route('user.store')}}" method="post">
+        @csrf
+  
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Fast Name</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Name">
+      <label for="name">name</label>
+      <input name="customer_name" type="text" class="form-control" id="name" placeholder="Enter Name">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Last Name</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Last Name">
+      <label for="email">email</label>
+      <input name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Email">
     </div>
+    <div class="form-group col-md-6">
+      <label for="Password">password</label>
+      <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  <div class="form-group">
+    <label for="inputAddress">address</label>
+    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Address">
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="inputAddress2">contact_no</label>
+    <input name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No">
   </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
+  
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
      

@@ -11,4 +11,8 @@ class CategoryController extends Controller
     {
         return view ('backend.layouts.category.list');
     }
+    public function store( Request $request)
+    {
+        dd($request->all());
+    }
 }

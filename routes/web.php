@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\RoomController;
 
 use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +33,7 @@ Route::get('/contact',[ HomeController::class,'contact']);
 Route::get('/posts',[ PostController::class,'list'])->name('post.list');
 Route::get('/rooms',[ RoomController::class,'quantity'])->name('room.quantity');
 Route::get('/categories',[ CategoryController::class,'list'])->name('category.list');
-Route::get('/customers',[ CustomerController::class,'list'])->name('customer.list');
+Route::post('/categories/store',[ CategoryController::class,'store'])->name('category.store');
+
+Route::get('/users',[ UserController::class,'list'])->name('user.list');
+Route::post('/users/store',[ UserController::class,'store'])->name('user.store');

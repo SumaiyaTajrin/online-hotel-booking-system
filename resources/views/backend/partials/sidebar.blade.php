@@ -36,9 +36,9 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{route('customer.list')}}">
+            <a class="nav-link" href="{{route('user.list')}}">
               <span data-feather="users"></span>
-              Customers
+              Users
             </a>
           </li>
           <li class="nav-item">
