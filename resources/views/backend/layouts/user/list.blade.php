@@ -13,30 +13,27 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
+      <th scope="col">Name</th>
+      <th scope="col">E-mail</th>
+      
+      <th scope="col">Address</th>
+      <th scope="col">Contact_No</th>
+   </tr>
   </thead>
   <tbody>
+    @foreach($users as $user)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$user->id}}</th>
+      <td>{{$user->name}}</td>
+      <td>{{$user->email}}</td>
+      <td>{{$user->address}}</td>
+      <td>{{$user->contact_no}}</td>
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+   @endforeach
+
+
+
   </tbody>
 </table>
 <!-- Modal -->
@@ -64,14 +61,14 @@
     </div>
     <div class="form-group col-md-6">
       <label for="Password">password</label>
-      <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input name="password" type="password" class="form-control" id="Password" placeholder="Enter Password">
     </div>
   <div class="form-group">
     <label for="inputAddress">address</label>
     <input name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Address">
   </div>
   <div class="form-group">
-    <label for="inputAddress2">contact_no</label>
+    <label for="contact_no">contact_no</label>
     <input name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No">
   </div>
   

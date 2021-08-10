@@ -9,7 +9,9 @@ class UserController extends Controller
 {
     public function list()
     {
-        return view('backend.layouts.user.list');
+        $users=User::all();
+        //dd($users);
+        return view('backend.layouts.user.list', compact('users'));
     }
     public function store( Request $request)
     {
