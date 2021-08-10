@@ -6,8 +6,8 @@
 
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">room type</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
+    <label for="room">room type</label>
+    <input type="room" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
     
   </div>
   <div class="form-group">
