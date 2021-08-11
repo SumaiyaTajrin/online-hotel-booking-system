@@ -18,7 +18,11 @@
             </a>
           </li>
           
-        
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('user.list')}}">
+              <span data-feather="users"></span>
+              Users
+            </a>
           <li class="nav-item">
             <a class="nav-link" href="{{route('room.quantity')}}">
               
@@ -35,18 +39,15 @@
             </a>
           </li>
 
+          
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('user.list')}}">
+            <a class="nav-link" href="{{route('booking.list')}}">
               <span data-feather="users"></span>
-              Users
+              Bookings
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
-          </li>
+          </li> 
+          
          
         </ul>
 

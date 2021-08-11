@@ -2,9 +2,8 @@
 
 @section('content')
 
-<h1>Users Details</h1>
+<h1>booking list</h1>
 
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
   Enter Details
 </button>
@@ -13,31 +12,33 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">E mail</th>
-      
-      <th scope="col">Address</th>
-      <th scope="col">Contact No</th>
-   </tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
   </thead>
   <tbody>
-    @foreach($users as $user)
     <tr>
-      <th scope="row">{{$user->id}}</th>
-      <td>{{$user->name}}</td>
-      <td>{{$user->email}}</td>
-      <td>{{$user->address}}</td>
-      <td>
-        {{$user->contact_no}}
-      </td>
-      
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
     </tr>
-   @endforeach
-
-
-
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
   </tbody>
 </table>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -49,9 +50,10 @@
         </button>
       </div>
       <div class="modal-body">
-        
-      <form action="{{route('user.store')}}" method="post">
-        @csrf
+
+
+      <form >
+       
   
     <div class="form-group col-md-6">
       <label for="name">name</label>
@@ -77,7 +79,6 @@
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-     
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -86,5 +87,4 @@
     </div>
   </div>
 </div>
-
 @endsection
