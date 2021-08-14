@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Backend\PostController;
 
 use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\RoomtypeController;
+
 use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\UserController;
@@ -41,3 +43,7 @@ Route::get('/users',[ UserController::class,'list'])->name('user.list');
 Route::post('/users/store',[ UserController::class,'store'])->name('user.store');
 
 Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
+Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
+Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
+
+
