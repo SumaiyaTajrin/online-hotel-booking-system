@@ -17,11 +17,9 @@ class CreateRoomtypesTable extends Migration
             $table->id();
             
             $table->string('name');
-            $table->integer('rooms_id');
-            $table->double('amount',15,2)->default(0.00);
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            
+            $table->string('status',10)->default('active');
             $table->timestamps();
         });
     }

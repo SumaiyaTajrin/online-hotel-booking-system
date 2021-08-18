@@ -13,8 +13,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Room Id</th>
-      <th scope="col">Amount</th>
+      <th scope="col">Status</th>
       <!-- <th scope="col"></th> -->
     </tr>
   </thead>
@@ -23,8 +22,8 @@
     <tr>
       < <th scope="row">{{$roomtype->id}}</th>
             <td>{{$roomtype->name}}</td>
-            <td>{{$roomtype->rooms_id}}</td>
-            <td>{{$roomtype->amount}} </td>
+            
+            <td>{{$roomtype->status}} </td>
     </tr>
     @endforeach
     
@@ -48,24 +47,12 @@
       <form action="{{route('roomtype.store')}}" method="post">
        @csrf
       
-       <div class="form-group">
-        <label for="name">Select Room</label>
-        <select class="form-control" name="room_id" id="">
-        @foreach($rooms as $room)
-        <option value="{{$room->id}}">{{$room->type}}</option>
-        @endforeach
-        </select>
-       </div> 
+       
        <div class="form-group">
     <label for="name">Name</label>
     <input name= "name" id= "name"type="text" class="form-control"  placeholder="Enter name">
     
-  </div>
-  <div class="form-group">
-    <label for="amount">Amount</label>
-    <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
-    
-  </div>
+  
   <div class="form-group">
     <label for="description">description</label>
     <input name="description" id="description" class="form-control"  placeholder="Enter description">

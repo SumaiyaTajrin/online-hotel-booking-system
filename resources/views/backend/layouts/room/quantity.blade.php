@@ -10,8 +10,9 @@
 <table class="table">
   <thead>
   <th scope="col">#</th>
-            <th scope="col">Type</th>
+            <th scope="col">Roomtype Name</th>
             <th scope="col">Accomodate</th>
+            <th scope="col">Amount</th>
             <!-- <th scope="col">Status</th>
             <th scope="col">Action</th> -->
   </thead>
@@ -19,12 +20,15 @@
   @foreach($rooms as $room)
     <tr>
       < <th scope="row">{{$room->id}}</th>
-            <td>{{$room->type}}</td>
+            <td>{{$room->roomtype->name}}</td>
             <td>{{$room->no_accomodate}} </td>
+            <td>{{$room->amount}} .BDT</td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+{{$rooms->links('pagination::bootstrap-4')}}
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,8 +45,16 @@
 <form action="{{route('room.store')}}" method="post">
   @csrf
   <div class="form-group">
-    <label for="room">room type</label>
-    <input name="room" type="text" class="form-control" id="room" aria-describedby="emailHelp" placeholder="Enter Type">
+        <label for="name">Select Roomtype</label>
+        <select class="form-control" name="roomtype_id" id="">
+        @foreach($roomtypes as $roomtype)
+        <option value="{{$roomtype->id}}">{{$roomtype->name}}</option>
+        @endforeach
+        </select>
+       </div> 
+       <div class="form-group">
+    <label for="amount">Amount</label>
+    <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
     
   </div>
 
@@ -51,10 +63,10 @@
     <input name="accomodate" type="number" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Enter no of accomodate">
     
   </div>
-  <!-- <div class="form-group">
+   <div class="form-group">
   <label for="d">Description</label>
             <textarea class="form-control" name="description" id="d" placeholder="Enter Description"></textarea>
-  </div> -->
+  </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> 
