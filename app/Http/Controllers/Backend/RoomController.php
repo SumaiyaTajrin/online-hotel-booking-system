@@ -11,7 +11,7 @@ class RoomController extends Controller
 {
     public function quantity()
     {
-        $rooms=Room::with('roomtype')->paginate(2);
+        $rooms=Room::with('roomtype')->paginate(5);
         $roomtypes=Roomtype::all();
         
 //        dd($products);
@@ -23,6 +23,7 @@ class RoomController extends Controller
        // dd($request->all());
          Room::create([
           'roomtype_id'=>$request->roomtype_id,
+          'room_number'=>$request->room_number,
              'amount'=>$request->amount,
              'no_accomodate'=>$request->accomodate,
              'description'=>$request->description,

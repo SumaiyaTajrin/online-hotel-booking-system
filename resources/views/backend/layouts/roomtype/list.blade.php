@@ -14,6 +14,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Status</th>
+      <th scope="col">Action</th>
       <!-- <th scope="col"></th> -->
     </tr>
   </thead>
@@ -24,6 +25,9 @@
             <td>{{$roomtype->name}}</td>
             
             <td>{{$roomtype->status}} </td>
+            <td>
+            <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-primary">view room</a>
+        </td>
     </tr>
     @endforeach
     

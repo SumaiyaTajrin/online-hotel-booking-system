@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\RoomtypeController;
 
 use App\Http\Controllers\Backend\BookingController;
+use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +33,11 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/contact', function () {
   //  return view('backend.layouts.contact');
 //});
+//admin panel routes
+
+Route::get('/',[FrontendHome::class,'home'])->name('home');
+
+Route::group(['prefix'=>'admin'],function(){
 
 Route::get('/',[ HomeController::class,'home']);
 Route::get('/contact',[ HomeController::class,'contact']);
@@ -45,5 +54,12 @@ Route::post('/users/store',[ UserController::class,'store'])->name('user.store')
 Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
 Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
 Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
+Route::get('/roomtype/{id}/room',[RoomtypeController::class,'allRoom'])->name('roomtype.room');
 
 
+Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
+
+Route::get('/customers',[ CustomerController::class,'list'])->name('customer.list');
+Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');
+
+});

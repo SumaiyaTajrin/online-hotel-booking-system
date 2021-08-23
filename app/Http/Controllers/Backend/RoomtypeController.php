@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Roomtype;
+use App\Models\Room;
 
 class RoomtypeController extends Controller
 {
@@ -25,6 +26,11 @@ class RoomtypeController extends Controller
         //     'contact no'=>$request->contact_no
           ]);
         return redirect()->back();
+    }
+    public function allRoom($id)
+    {
+        $rooms=Room::where('roomtype_id',$id)->get();
+        return view('backend.layouts.roomtype.room-list',compact('rooms'));
     }
     
 }

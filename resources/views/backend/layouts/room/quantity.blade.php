@@ -11,6 +11,7 @@
   <thead>
   <th scope="col">#</th>
             <th scope="col">Roomtype Name</th>
+            <th scope="col">Room Number</th>
             <th scope="col">Accomodate</th>
             <th scope="col">Amount</th>
             <!-- <th scope="col">Status</th>
@@ -21,6 +22,7 @@
     <tr>
       < <th scope="row">{{$room->id}}</th>
             <td>{{$room->roomtype->name}}</td>
+            <td>{{$room->room_number}} </td>
             <td>{{$room->no_accomodate}} </td>
             <td>{{$room->amount}} .BDT</td>
     </tr>
@@ -52,6 +54,11 @@
         @endforeach
         </select>
        </div> 
+       <div class="form-group">
+    <label for="room_number">Room Number</label>
+    <input name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
+    
+  </div>
        <div class="form-group">
     <label for="amount">Amount</label>
     <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">

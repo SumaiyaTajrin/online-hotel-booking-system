@@ -44,7 +44,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="{{url('css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{url('backend/css/dashboard.css')}}" rel="stylesheet">
   </head>
   <body>
     
