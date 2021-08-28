@@ -124,7 +124,7 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Welcome to Roxandrea Hotel</span>
+          	<span class="subheading">Welcome to Sea Shine Hotel</span>
             <h2 class="mb-4">A New Vision of Luxury Hotel</h2>
           </div>
         </div>  
@@ -197,7 +197,7 @@
     	<div class="container-fluid px-0">
     		<div class="row no-gutters justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Roxandrea Rooms</span>
+          	<span class="subheading">Sea Shine Rooms</span>
             <h2 class="mb-4">Hotel Master's Rooms</h2>
           </div>
         </div>  
@@ -206,7 +206,7 @@
     				<div class="room-wrap">
     					<div class="img d-flex align-items-center" style="background-image: url(frontend/images/bg_3.jpg);">
     						<div class="text text-center px-4 py-4">
-    							<h2>Welcome to <a href="index.html">Roxandrea</a> Hotel</h2>
+    							<h2>Welcome to <a href="index.html">Sea Shine</a> Hotel</h2>
     							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
     						</div>
     					</div>
