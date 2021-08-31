@@ -5,12 +5,13 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Backend\UserController as BackendUser;
 
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\RoomtypeController;
 
 use App\Http\Controllers\Backend\BookingController;
-use App\Http\Controllers\Backend\CustomerController;
+
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -44,7 +45,7 @@ Route::post('/signup/store',[UserController::class,'signupformpost'])->name('use
 
 
 
-
+Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
 
 Route::group(['prefix'=>'admin'],function(){
 
@@ -71,7 +72,10 @@ Route::get('/roomtype/{id}/room',[RoomtypeController::class,'allRoom'])->name('r
 
 Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
 
-Route::get('/customers',[ CustomerController::class,'list'])->name('customer.list');
+
 Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');
+
+Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
+Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 
 });
