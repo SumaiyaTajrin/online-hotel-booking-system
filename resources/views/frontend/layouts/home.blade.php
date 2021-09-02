@@ -212,73 +212,22 @@
     					</div>
     				</div>
     			</div>
+				@foreach($roomtypes as $data)
     			<div class="col-lg-6">
     				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(frontend/images/room-1.jpg);"></a>
+					<div class="img"><img width="400px" src="{{url('uploads/'.$data->image)}}"></div>
     					<div class="half left-arrow d-flex align-items-center">
     						<div class="text p-4 p-xl-5 text-center">
     							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Suite Room</a></h3>
+    							<p class="mb-0"><span class="price mr-1">{{$data->amount}} BDT</span> <span class="per">per night</span></p>
+	    						<h3 class="mb-3"><a href="rooms.html">{{$data->name}}</a></h3>
 	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
     						</div>
     					</div>
     				</div>
     			</div>
-
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img order-md-last" style="background-image: url(frontend/images/room-2.jpg);"></a>
-    					<div class="half right-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Family Room</a></h3>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img order-md-last" style="background-image: url(frontend/images/room-3.jpg);"></a>
-    					<div class="half right-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Deluxe Room</a></h3>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(frontend/images/room-4.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Luxury Room</a></h3>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(frontend/images/room-6.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Superior Room</a></h3>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
+				@endforeach
+    			
     		</div>
     	</div>
     </section>

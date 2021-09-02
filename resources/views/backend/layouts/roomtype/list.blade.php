@@ -12,7 +12,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Product image</th>
       <th scope="col">Name</th>
+      <th scope="col">Amount</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
       <!-- <th scope="col"></th> -->
@@ -22,8 +24,12 @@
   @foreach($roomtypes as $roomtype)
     <tr>
       < <th scope="row">{{$roomtype->id}}</th>
+      <td>
+                <img src="{{url('/uploads/'.$roomtype->image)}}" width="100px" alt="roomtype image">
+            </td>
+
             <td>{{$roomtype->name}}</td>
-            
+            <td>{{$roomtype->amount}}</td>
             <td>{{$roomtype->status}} </td>
             <td>
             <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-primary">view room</a>
@@ -48,7 +54,7 @@
       </div>
       <div class="modal-body">
 
-      <form action="{{route('roomtype.store')}}" method="post">
+      <form action="{{route('roomtype.store')}}" method="post" enctype="multipart/form-data">
        @csrf
       
        
@@ -62,7 +68,15 @@
     <input name="description" id="description" class="form-control"  placeholder="Enter description">
   </div>
   
-  
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
+    
+  </div>
+  <div class="form-group">
+    <label for="description">Upload Product Image</label>
+    <input type="file" class="form-control" name="room_image">
+    </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

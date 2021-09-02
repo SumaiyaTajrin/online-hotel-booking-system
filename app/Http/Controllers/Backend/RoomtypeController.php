@@ -18,10 +18,21 @@ class RoomtypeController extends Controller
     }
     public function store( Request $request)
     {
-        
+        $fileName='';
+        if($request->hasFile('room_image'))
+        {
+            $file=$request->file('room_image');
+           //generate file name here
+            $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+        }
+
+
          Roomtype::create([
              'name'=>$request->name,
             'description'=>$request->description,
+               'amount'=>$request->amount,
+               'image'=>$fileName
         //     'address'=>$request->address,
         //     'contact no'=>$request->contact_no
           ]);
