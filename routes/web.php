@@ -43,12 +43,21 @@ Route::get('/signup',[UserController::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupformpost'])->name('user.signup.store');
 
 
+// frontend login
+Route::get('/login',[UserController::class,'login'])->name('guest.login');
+Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.login');
+
+
+Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){
+  Route::get('/logout',[UserController::class,'logout'])->name('guest.logout');
+});
+
 
 
 Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
 Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
 
 Route::get('/',[ HomeController::class,'home'])->name('dashboard');
 Route::get('/logout',[BackendUser::class,'logout'])->name('logout');

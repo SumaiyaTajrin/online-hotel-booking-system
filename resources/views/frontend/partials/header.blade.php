@@ -13,8 +13,19 @@
 	          <li class="nav-item"><a href="rooms.html" class="nav-link">Rooms</a></li>
 			  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="restaurant.html" class="nav-link">Blog</a></li>
+
+
+
+			  @if(auth()->user())
+                        <a class="nav-item nav-link" href="{{route('guest.logout')}}">Logout</a>
+                        <a class="nav-item nav-link" href="">{{auth()->user()->name}}</a>
+                        @else
 	          <li class="nav-item"><a href="{{route('user.signup')}}" class="nav-link">Signup</a></li>
-	          <li class="nav-item"><a href="" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="{{route('guest.login')}}" class="nav-link">Login</a></li>
+
+			  @endif
+
+
 	        </ul>
 	      </div>
 	    </div>

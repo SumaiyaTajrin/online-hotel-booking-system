@@ -23,8 +23,15 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials))
         {
-            //user logged in
-            return redirect()->route('dashboard');
+            if(auth()->user()->role=='admin')
+           {
+               return redirect()->route('dashboard');
+           }else
+           {
+               Auth::logout();
+               return redirect()->route('user.signup');
+           }
+            
         }
 
         return redirect()->back()->with('message','invalid user info.');
