@@ -10,6 +10,9 @@ use App\Http\Controllers\Frontend\RoomController as FrontendRoom;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 
+
+use App\Http\Controllers\Frontend\BookingController as FrontendBooking;
+
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\RoomtypeController;
 
@@ -42,6 +45,9 @@ use Illuminate\Support\Facades\Route;
 //admin panel routes
 
 Route::get('/',[FrontendHome::class,'home'])->name('home');
+Route::get('/about',[FrontendHome::class,'about'])->name('about');
+
+// frontend signup
 Route::get('/signup',[UserController::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupformpost'])->name('user.signup.store');
 
@@ -49,11 +55,13 @@ Route::post('/signup/store',[UserController::class,'signupformpost'])->name('use
 // frontend login
 Route::get('/login',[UserController::class,'login'])->name('guest.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.login');
+
 // frontend room
 Route::get('/room',[FrontendRoom::class,'room'])->name('room');
-
 Route::get('/room/{id}details',[FrontendRoom::class,'details'])->name('room.roomtype');
 
+// frontend booking
+Route::get('/booking',[FrontendBooking::class,'booking'])->name('booking');
 
 
 Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){

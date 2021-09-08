@@ -15,4 +15,9 @@ class HomeController extends Controller
         $roomtypes=Roomtype::latest()->get()->take(5);
         return view('frontend.layouts.home', compact('roomtypes'));
     }
+
+    public function about()
+    {
+        return view('frontend.layouts.about');
+    }
 }
