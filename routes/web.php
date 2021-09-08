@@ -4,6 +4,9 @@ use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
+
+use App\Http\Controllers\Frontend\RoomController as FrontendRoom;
+
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 
@@ -46,6 +49,11 @@ Route::post('/signup/store',[UserController::class,'signupformpost'])->name('use
 // frontend login
 Route::get('/login',[UserController::class,'login'])->name('guest.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.login');
+// frontend room
+Route::get('/room',[FrontendRoom::class,'room'])->name('room');
+
+Route::get('/room/{id}details',[FrontendRoom::class,'details'])->name('room.roomtype');
+
 
 
 Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){

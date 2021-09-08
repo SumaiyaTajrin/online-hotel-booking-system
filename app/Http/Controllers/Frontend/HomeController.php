@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $roomtypes=Roomtype::get()->take(5);
+        $roomtypes=Roomtype::latest()->get()->take(5);
         return view('frontend.layouts.home', compact('roomtypes'));
     }
 }
