@@ -58,7 +58,7 @@ Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.log
 
 // frontend room
 Route::get('/room',[FrontendRoom::class,'room'])->name('room');
-Route::get('/room/{id}details',[FrontendRoom::class,'details'])->name('room.roomtype');
+Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.details');
 
 // frontend booking
 Route::get('/booking',[FrontendBooking::class,'booking'])->name('booking');

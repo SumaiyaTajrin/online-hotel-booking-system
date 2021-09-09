@@ -17,8 +17,8 @@ class RoomController extends Controller
     public function details($id)
     {
         $roomtypes=Roomtype::find($id);
-        
-        return view('frontend.layouts.roomDetails',compact('roomtypes'));
+        $allRooms=Roomtype::get()->take(4);
+        return view('frontend.layouts.roomDetails',compact('roomtypes','allRooms'));
     }
 
 }

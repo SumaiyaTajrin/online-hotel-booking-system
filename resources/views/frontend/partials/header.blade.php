@@ -21,12 +21,16 @@
 			  <button type="button" class="btn btn-outline-primary">Booking</button></a></li>
 			  <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="restaurant.html" class="nav-link">Blog</a></li> -->
-
+			  <li class="nav-item"><a href="" class="nav-link">
+			  <button type="button" class="btn btn-outline-primary">Payment</button></a></li>
 
 
 			  @if(auth()->user())
-                        <a class="nav-item nav-link" href="{{route('guest.logout')}}">Logout</a>
-                        <a class="nav-item nav-link" href="">{{auth()->user()->name}}</a>
+                        <a class="nav-item nav-link" href="{{route('guest.logout')}}">
+						<button type="button" class="btn btn-outline-primary">logout</button></a>
+                        <a class="nav-item nav-link" href="">
+						<button type="button" class="btn btn-outline-primary">{{auth()->user()->name}}</button>
+						</a>
                         @else
 	          <li class="nav-item"><a href="{{route('user.signup')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-primary">Signup</button>

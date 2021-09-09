@@ -76,16 +76,17 @@
           		<div class="col-md-12 ftco-animate">
           			<div class="single-slider owl-carousel">
           				<div class="item">
-          					<img class="room-img" src="{{asset('frontend/images/room-4.jpg')}}"/>
+                  <img src="{{url('/uploads/'.$roomtypes->image)}}" alt="">
           				</div>
-          				<div class="item">
+          				<!-- <div class="item">
                           <img class="room-img" src="{{asset('frontend/images/room-5.jpg')}}"></div>
-          				</div>
+          				</div> -->
           				
           			</div>
           		</div>
           		<div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-          			<h2 class="mb-4">Luxury Room <span>- (10 Available rooms)</span></h2>
+              <b><h2><div class="product_name">{{$roomtypes->name}}<span>- (10 Available rooms)</span></h2></b>
+              </div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
     						<div class="d-md-flex mt-5 mb-5">
     							<ul class="list">
@@ -96,13 +97,17 @@
 	    							<li><span>View:</span> Sea View</li>
 	    							<li><span>Bed:</span> 1</li>
 	    						</ul>
+                  
     						</div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
           		</div>
-          		
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-               BOOK NOW
-              </button>
+          		<b><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></b>
+              <br></br>
+              <a href="{{route('booking')}}" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Book Now </span></a>
+             <br></br>
+
+              
+
           		<div class="col-md-12 properties-single ftco-animate mb-5 mt-4">
           			<h4 class="mb-4">Review &amp; Ratings</h4>
           			<div class="row">
