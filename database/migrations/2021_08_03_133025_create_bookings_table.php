@@ -15,15 +15,16 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('room_no')->default(0);
-            $table->integer('guest_no');
-            $table->integer('customer_id')->default(0);
-            $table->string('status', 10)->default('active');
-            $table->integer('payment_id')->default(0);
-            $table->integer('package_id');
-            $table->integer('check_in_time');
-            $table->integer('check_out_time');
-
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('check_in_date');
+            $table->string('check_out_date');
+            $table->string('no_of_guest');
+            $table->string('room_quantity');
+            $table->string('contact_no');
+            $table->string('address');
             $table->timestamps();
         });
     }

@@ -3,10 +3,18 @@
 @section('content')
 
 <h1> Room Type</h1>
-
+<div>
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
   Enter Details
 </button>
+</div>
+
+@if(session()->has('message'))
+        <div class="row" style="padding: 10px;">
+            <span class="alert alert-success">{{session()->get('message')}}</span>
+        </div>
+    @endif
+
 
 <table class="table">
   <thead>
@@ -32,7 +40,11 @@
             <td>{{$roomtype->amount}}</td>
             <td>{{$roomtype->status}} </td>
             <td>
-            <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-primary">view room</a>
+            <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-info">view room</a>
+            <a href="{{route('roomtype.edit',$roomtype->id)}}" class="btn btn-warning">edit</a>
+            <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('roomtype.delete',$roomtype->id)}}" class="btn btn-danger">delete</a>
+
+
         </td>
     </tr>
     @endforeach

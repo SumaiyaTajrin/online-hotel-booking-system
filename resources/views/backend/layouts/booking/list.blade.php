@@ -4,87 +4,39 @@
 
 <h1>booking list</h1>
 
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-  Enter Details
-</button>
-
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Check In Date</th>
+      <th scope="col">Check Out Date</th>
+      <th scope="col">No Of Guest</th>
+      <th scope="col">Room Quantity</th>
+      <th scope="col">Contact No</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+      
     </tr>
   </thead>
   <tbody>
+  @foreach($bookings as $key=>$data)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{$data->first_name}}</td>
+      <td>{{$data->last_name}}</td>
+      <td>{{$data->email}}</td>
+      <td>{{$data->check_in_date}}</td>
+      <td>{{$data->check_out_date}}</td>
+      <td>{{$data->no_of_guest}}</td>
+      <td>{{$data->room_quantity}}</td>
+      <td>{{$data->contact_no}}</td>
+      <td>{{$data->address}}</td>
+      <td>view</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-      <form >
-       
-  
-    <div class="form-group col-md-6">
-      <label for="name">name</label>
-      <input name="customer_name" type="text" class="form-control" id="name" placeholder="Enter Name">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="email">email</label>
-      <input name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="Password">password</label>
-      <input name="password" type="password" class="form-control" id="Password" placeholder="Enter Password">
-    </div>
-  <div class="form-group">
-    <label for="inputAddress">address</label>
-    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Address">
-  </div>
-  <div class="form-group">
-    <label for="contact_no">contact_no</label>
-    <input name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No">
-  </div>
-  
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 @endsection

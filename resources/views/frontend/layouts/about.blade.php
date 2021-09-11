@@ -41,11 +41,11 @@
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="{{route('home')}}" class="nav-link">
               <button type="button" class="btn btn-outline-primary">Home</button></a></li>
-	          <li class="nav-item active"><a href="rooms.html" class="nav-link">
+	          <li class="nav-item active"><a href="{{route('room')}}" class="nav-link">
             <button type="button" class="btn btn-outline-primary">Rooms</button></a></li>
-	          <li class="nav-item"><a href="restaurant.html" class="nav-link">
+	          <li class="nav-item"><a href="{{route('booking')}}" class="nav-link">
             <button type="button" class="btn btn-outline-primary">Booking</button></a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">
+	          <li class="nav-item"><a href="{{route('about')}}" class="nav-link">
             <button type="button" class="btn btn-outline-primary">About</button></a></li>
 	        </ul>
 	      </div>

@@ -1,6 +1,7 @@
 @extends('frontend.master')
 @section('contents')
-<form action="{{route('user.signup.store')}}" type="form" method="post">
+
+<form action="{{route('booking.store')}}" type="form" method="post">
       @csrf
   
     <div class="form-group col-md-6">
@@ -28,8 +29,8 @@
     <input required name="no_of_guest"type="text" class="form-control" id="no_of_guest" placeholder="Enter Guest No">
     </div>
     <div class="form-group col-md-6">
-    <label for="room_no">Room No</label>
-    <input required name="room_no"type="number" class="form-control" id="room_no" placeholder="Enter Room No">
+    <label for="room_quantity">Room Quantity</label>
+    <input required name="room_quantity"type="number" class="form-control" id="room_quantity" placeholder="Enter room quantity">
     </div>
     <div class="form-group col-md-6">
     <label for="contact_no">Contact_no</label>

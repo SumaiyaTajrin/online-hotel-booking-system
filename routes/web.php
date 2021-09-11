@@ -62,6 +62,7 @@ Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.det
 
 // frontend booking
 Route::get('/booking',[FrontendBooking::class,'booking'])->name('booking');
+Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
 
 
 Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){
@@ -93,7 +94,12 @@ Route::post('/categories/store',[ CategoryController::class,'store'])->name('cat
 
 
 Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
+
+// roomtype
 Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
+Route::get('/roomtype/delete/{id}',[ RoomtypeController::class,'delete'])->name('roomtype.delete');
+Route::get('/roomtype/edit/{id}',[ RoomtypeController::class,'edit'])->name('roomtype.edit');
+Route::put('/roomtype/update/{id}',[ RoomtypeController::class,'update'])->name('roomtype.update');
 Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
 Route::get('/roomtype/{id}/room',[RoomtypeController::class,'allRoom'])->name('roomtype.room');
 
