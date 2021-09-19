@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>room quantity</h1>
+<h1>room list</h1>
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
   Enter Details
 </button>
@@ -10,6 +10,7 @@
 <table class="table">
   <thead>
   <th scope="col">#</th>
+            <th scope="col">Room image</th>
             <th scope="col">Roomtype Name</th>
             <th scope="col">Room Number</th>
             <th scope="col">Accomodate</th>
@@ -21,6 +22,9 @@
   @foreach($rooms as $room)
     <tr>
       < <th scope="row">{{$room->id}}</th>
+      <td>
+                <img src="{{url('/uploads/'.$room->image)}}" width="100px" alt="room image">
+            </td>
             <td>{{$room->roomtype->name}}</td>
             <td>{{$room->room_number}} </td>
             <td>{{$room->no_accomodate}} </td>
@@ -44,7 +48,7 @@
       </div>
       <div class="modal-body">
 
-<form action="{{route('room.store')}}" method="post">
+<form action="{{route('room.store')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
         <label for="name">Select Roomtype</label>
@@ -54,26 +58,34 @@
         @endforeach
         </select>
        </div> 
+
+     
+  
+
        <div class="form-group">
     <label for="room_number">Room Number</label>
-    <input name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
+    <input required name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
     
   </div>
        <div class="form-group">
     <label for="amount">Amount</label>
-    <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
+    <input required name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
     
   </div>
 
   <div class="form-group">
     <label for="a">no_accomodate</label>
-    <input name="accomodate" type="number" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Enter no of accomodate">
+    <input required name="accomodate" type="number" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Enter no of accomodate">
     
   </div>
    <div class="form-group">
   <label for="d">Description</label>
             <textarea class="form-control" name="description" id="d" placeholder="Enter Description"></textarea>
   </div>
+  <div class="form-group">
+    <label for="description">Upload room Image</label>
+    <input required type="file" class="form-control" name="room_image">
+    </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> 

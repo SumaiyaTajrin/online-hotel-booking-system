@@ -47,8 +47,8 @@
     <label for="inputAddress">address</label>
     <input required name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Your Address">
     </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button  type="submit" class="btn btn-primary">Submit</button>
+    
 </form>
 </div>
 <div class="col-md-3"></div>

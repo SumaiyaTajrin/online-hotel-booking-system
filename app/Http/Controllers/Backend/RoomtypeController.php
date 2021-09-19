@@ -52,7 +52,7 @@ class RoomtypeController extends Controller
             $roomtypes->delete();
             return redirect()->back()->with('message','room deleted successfully');
         }
-        return redirect()->back()->with('message','No product found to delete.');
+        return redirect()->back()->with('message','No rooom found to delete.');
         
     }
     public function edit($id)

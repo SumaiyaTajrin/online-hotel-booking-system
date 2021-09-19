@@ -57,11 +57,17 @@ body {
                                 <input type="password" name="password" id="password" class="form-control"placeholder="Password" >
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+			
+      <div class="text-dark">Don't have any account? <a href="{{route('user.signup')}}">Signup</a>
+    </div>
+                               
                             </div>
                             
+                            
                         </form>
+                        
                     </div>
                 </div>
             </div>

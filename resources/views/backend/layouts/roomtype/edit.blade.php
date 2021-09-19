@@ -21,7 +21,7 @@
   
   <div class="form-group">
     <label for="amount">Amount</label>
-    <input value="{{$roomtypes->amount }}"name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
+    <input min="0" value="{{$roomtypes->amount }}"name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
     
   </div>
   <div class="form-group">

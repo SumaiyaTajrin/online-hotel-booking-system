@@ -10,7 +10,7 @@ use App\Http\Controllers\Frontend\RoomController as FrontendRoom;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 
-
+use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookingController as FrontendBooking;
 
 use App\Http\Controllers\Backend\RoomController;
@@ -47,37 +47,44 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
-// frontend signup
-Route::get('/signup',[UserController::class,'signupform'])->name('user.signup');
-Route::post('/signup/store',[UserController::class,'signupformpost'])->name('user.signup.store');
-
-
-// frontend login
-Route::get('/login',[UserController::class,'login'])->name('guest.login');
-Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.login');
-
-// frontend room
-Route::get('/room',[FrontendRoom::class,'room'])->name('room');
-Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.details');
 
 // frontend booking
 Route::get('/booking',[FrontendBooking::class,'booking'])->name('booking');
 Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
 
 
+
+// frontend room
+Route::get('/room',[FrontendRoom::class,'room'])->name('room');
+Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.details');
+// search
+Route::get('/search',[SearchController::class,'search'])->name('search');
+
+// frontend login
+Route::get('/login',[UserController::class,'login'])->name('guest.login');
+Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.login');
+
+// frontend signup
+Route::get('/signup',[UserController::class,'signupform'])->name('user.signup');
+Route::post('/signup/store',[UserController::class,'signupformpost'])->name('user.signup.store');
+
 Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){
+
+  
   Route::get('/logout',[UserController::class,'logout'])->name('guest.logout');
 });
 
 
 
+
+// backend
+
 Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
 Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
 
-Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
-Route::get('/',[ HomeController::class,'home'])->name('dashboard');
-Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
+  Route::group(['middleware'=>'role'],function (){
 
 Route::get('/contact',[ HomeController::class,'contact']);
 Route::get('/posts',[ PostController::class,'list'])->name('post.list');
@@ -94,6 +101,8 @@ Route::post('/categories/store',[ CategoryController::class,'store'])->name('cat
 
 
 Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
+Route::get('/bookings/delete/{id}',[ BookingController::class,'delete'])->name('booking.delete');
+
 
 // roomtype
 Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
@@ -112,4 +121,25 @@ Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list')
 Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
 Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 
+});
+
+// Route::group(['prefix'=>'manager','middleware'=>'manager'],function (){
+
+//   Route::get('/hotel',[ HotelController::class,'info'])->name('hotel.info');
+
+//   Route::get('/rooms',[ RoomController::class,'quantity'])->name('room.quantity');
+
+// Route::post('/rooms/store',[ RoomController::class,'store'])->name('room.store');
+
+// Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
+
+// Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
+// Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
+
+// Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
+
+// });
+
+Route::get('/',[ HomeController::class,'home'])->name('dashboard');
+Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 });

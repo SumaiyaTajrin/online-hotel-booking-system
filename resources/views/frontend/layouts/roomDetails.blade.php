@@ -103,7 +103,7 @@
           		</div>
           		<b><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></b>
               <br></br>
-              <a href="{{route('booking')}}" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Book Now </span></a>
+              <a href="{{route('booking' )}}" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Book Now </span></a>
              <br></br>
 
               

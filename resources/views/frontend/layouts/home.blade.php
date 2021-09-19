@@ -8,13 +8,13 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-12 pr-1 aside-stretch">
-    				<form action="#" class="booking-form">
+    				<form action="{{route('search')}}" method="get" class="booking-form">
 	        		<div class="row">
 	        			<div class="col-md d-flex py-md-4">
 	        				<div class="form-group align-self-stretch d-flex align-items-end">
 	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
 				    					<label for="#">Check-in Date</label>
-				    					<input type="text" class="form-control checkin_date" placeholder="Check-in date">
+				    					<input type="text" name="from_date" class="form-control checkin_date" placeholder="Check-in date">
 			    					</div>
 			    				</div>
 	        			</div>
@@ -22,7 +22,7 @@
 	        				<div class="form-group align-self-stretch d-flex align-items-end">
 	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
 				    					<label for="#">Check-out Date</label>
-				    					<input type="text" class="form-control checkout_date" placeholder="Check-out date">
+				    					<input type="text" name="to_date" class="form-control checkout_date" placeholder="Check-out date">
 			    					</div>
 			    				</div>
 	        			</div>
@@ -68,7 +68,7 @@
 	        			</div>
 	        			<div class="col-md d-flex">
 	        				<div class="form-group d-flex align-self-stretch">
-			              <a href="{{route('room')}}" class="btn btn-black py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check Availability <small>Best Price Guaranteed!</small></span></a>
+							<button  type="submit" class="btn btn-primary">Check Availibility</button>
 			            </div>
 	        			</div>
 	        		</div>
@@ -198,7 +198,7 @@
     		<div class="row no-gutters justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
           	<span class="subheading">Sea Shine Rooms</span>
-            <h2 class="mb-4">Hotel Master's Rooms</h2>
+            <h2 class="mb-4">Sea Shine Hotel Rooms</h2>
           </div>
         </div>  
     		<div class="row no-gutters">

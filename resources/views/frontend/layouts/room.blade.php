@@ -1,5 +1,7 @@
 @extends('frontend.master')
-
+@section('slider')
+    @include('frontend.partials.slider')
+@endsection
 @section('contents')
 <br></br>
 @foreach($roomtypes as $data )

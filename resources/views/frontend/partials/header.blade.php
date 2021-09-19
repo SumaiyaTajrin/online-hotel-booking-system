@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-secondary ftco-navbar-secondary" id="ftco-navbar">
 	  
 <div class="container">
 	      <a class="navbar-brand" href="index.html">Sea Shine</a>
@@ -9,34 +9,34 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Home</button>
+			  <button type="button" class="btn btn-outline-light">Home</button>
 			  </a></li>
 			  <li class="nav-item"><a href="{{route('about')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">About</button>
+			  <button type="button" class="btn btn-outline-light">About</button>
 			  </a></li>
 	          <li class="nav-item"><a href="{{route('room')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Rooms</button>
+			  <button type="button" class="btn btn-outline-light">Rooms</button>
 			</a></li>
-			  <li class="nav-item"><a href="{{route('booking')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Booking</button></a></li>
+			  <!-- <li class="nav-item"><a href="{{route('booking')}}" class="nav-link">
+			  <button type="button" class="btn btn-outline-primary">Booking</button></a></li> -->
 			  <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="restaurant.html" class="nav-link">Blog</a></li> -->
-			  <li class="nav-item"><a href="" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Payment</button></a></li>
+			  <!-- <li class="nav-item"><a href="" class="nav-link">
+			  <button type="button" class="btn btn-outline-light">Payment</button></a></li> -->
 
 
 			  @if(auth()->user())
-                        <a class="nav-item nav-link" href="{{route('guest.logout')}}">
-						<button type="button" class="btn btn-outline-primary">logout</button></a>
-                        <a class="nav-item nav-link" href="">
-						<button type="button" class="btn btn-outline-primary">{{auth()->user()->name}}</button>
-						</a>
-                        @else
+             <a class="nav-item nav-link" href="{{route('guest.logout')}}">
+			<button type="button" class="btn btn-outline-light">logout</button></a>
+            <a class="nav-item nav-link" href="">
+			<button type="button" class="btn btn-outline-light">{{auth()->user()->name}}</button>
+			</a>
+            @else
 	          <li class="nav-item"><a href="{{route('user.signup')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Signup</button>
+			  <button type="button" class="btn btn-outline-light">Signup</button>
 			  </a></li>
 	          <li class="nav-item"><a href="{{route('guest.login')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Login</button>
+			  <button type="button" class="btn btn-outline-light">Login</button>
 			  </a></li>
 
 			  @endif

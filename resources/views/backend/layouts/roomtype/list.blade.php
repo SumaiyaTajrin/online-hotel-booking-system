@@ -42,7 +42,7 @@
             <td>
             <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-info">view room</a>
             <a href="{{route('roomtype.edit',$roomtype->id)}}" class="btn btn-warning">edit</a>
-            <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('roomtype.delete',$roomtype->id)}}" class="btn btn-danger">delete</a>
+            <a onclick="return confirm('Are you sure you want to delete this room?');" href="{{route('roomtype.delete',$roomtype->id)}}" class="btn btn-danger">delete</a>
 
 
         </td>
@@ -86,7 +86,7 @@
     
   </div>
   <div class="form-group">
-    <label for="description">Upload Product Image</label>
+    <label for="description">Upload room Image</label>
     <input type="file" class="form-control" name="room_image">
     </div>
   
