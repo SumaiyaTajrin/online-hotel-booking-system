@@ -57,6 +57,8 @@ Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('
 // frontend room
 Route::get('/room',[FrontendRoom::class,'room'])->name('room');
 Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.details');
+Route::get('/allroom/{id}',[FrontendRoom::class,'allroomview'])->name('allroom');
+
 // search
 Route::get('/search',[SearchController::class,'search'])->name('search');
 

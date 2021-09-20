@@ -85,7 +85,7 @@
           			</div>
           		</div>
           		<div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-              <b><h2><div class="product_name">{{$roomtypes->name}}<span>- (10 Available rooms)</span></h2></b>
+              <b><h2><div class="room_name">{{$roomtypes->roomtype->name}}<span>- (10 Available rooms)</span></h2></b>
               </div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
     						<div class="d-md-flex mt-5 mb-5">

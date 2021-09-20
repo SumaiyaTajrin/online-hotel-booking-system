@@ -16,10 +16,17 @@ class RoomController extends Controller
     
     public function details($id)
     {
-        $roomtypes=Roomtype::find($id);
+        $roomtypes=Room::find($id);
         $rooms=Room::get()->take(10);
         $allRooms=Roomtype::get()->take(4);
         return view('frontend.layouts.roomDetails',compact('roomtypes','allRooms','rooms'));
+    }
+
+    public function allroomview($id)
+    {
+       $room=Room::find($id);
+       $rooms=Room::where('roomtype_id',$room->roomtype_id)->get();
+      return view('frontend.layouts.allroom-view', compact('rooms')); 
     }
 
 }

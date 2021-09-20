@@ -3,10 +3,8 @@
 @section('content')
 
 <h1>room list</h1>
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-  Enter Details
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Enter Details
 </button>
-
 <table class="table">
   <thead>
   <th scope="col">#</th>
@@ -15,13 +13,12 @@
             <th scope="col">Room Number</th>
             <th scope="col">Accomodate</th>
             <th scope="col">Amount</th>
-            <!-- <th scope="col">Status</th>
-            <th scope="col">Action</th> -->
+
   </thead>
   <tbody>
   @foreach($rooms as $room)
     <tr>
-      < <th scope="row">{{$room->id}}</th>
+       <th scope="row">{{$room->id}}</th>
       <td>
                 <img src="{{url('/uploads/'.$room->image)}}" width="100px" alt="room image">
             </td>

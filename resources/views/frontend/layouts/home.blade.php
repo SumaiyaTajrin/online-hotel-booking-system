@@ -33,13 +33,13 @@
 			      					<div class="form-field">
 			        					<div class="select-wrap">
 			                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-			                    <select name="" id="" class="form-control">
-			                    	<option value="">Suite</option>
-			                      <option value="">Family Room</option>
-			                      <option value="">Deluxe Room</option>
-			                      <option value="">Classic Room</option>
-			                      <option value="">Superior Room</option>
-			                      <option value="">Luxury Room</option>
+			                    <select type= "text" name="" id="" class="form-control">
+                                 @foreach($roomtypes  as $roomtype)
+			                    	<option value="{{$roomtype->id}}">
+									{{$roomtype->name}}
+									</option>
+			                      
+									@endforeach
 			                    </select>
 			                  </div>
 				              </div>
@@ -213,8 +213,9 @@
     				</div>
     			</div>
 				@foreach($roomtypes as $data )
+				
     			<div class="col-lg-6">
-				<a href="{{route('room.details',$data->id)}}">
+				<a href="{{route('allroom' ,$data->id)}}">
     				<div class="room-wrap d-md-flex">
 					<div class="img"><img width="400px" src="{{url('uploads/'.$data->image)}}"></div>
     					<div class="half left-arrow d-flex align-items-center">
@@ -223,7 +224,7 @@
     							<p class="mb-0"><span class="price mr-1">{{$data->amount}} BDT</span> <span class="per">per night</span></p>
 	    						<h3 class="mb-3"><a href="rooms.html">{{$data->name}}</a></h3>
 								
-	    						<p class="pt-1"><a href="{{route('room.details', $data->id)}}" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+	    						<p class="pt-1"><a href="{{route('allroom' ,$data->id)}}" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
 								
     						</div>
     					</div>

@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $roomtypes=Roomtype::latest()->get()->take(5);
+        $roomtypes=Roomtype::orderBy('id','desc')->toBase()->get();
         return view('frontend.layouts.home', compact('roomtypes'));
     }
 
