@@ -5,7 +5,16 @@
             <span class="alert alert-success">{{session()->get('message')}}</span>
         </div>
     @endif
+
+    <div>
+      <p>
+        <label for="">Room Name: {{$room->room_number}}</label><br>
+        <label for="">Room Id: {{$room->id}}</label></br>
+      </p>
+    </div>
     <br></br>
+
+
 <form action="{{route('booking.store')}}" type="form" method="post">
       @csrf
   
@@ -18,14 +27,7 @@
      <b> <label for="email">Email</label></b>
       <input required name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
     </div>
-    <div class="form-group col-md-6">
-    <b><label for="name">Select Roomtype</label></b>
-        <select class="form-control" name="roomtype_id" id="">
-        @foreach($roomtypes as $data)
-        <option value="{{$data->id}}">{{$data->name}}</option>
-        @endforeach
-        </select>
-       </div> 
+   
 
 
       
@@ -41,11 +43,7 @@
 
 
     
-    <b> <p>Type</p></b>
-        <input type="radio" id="AC" name="type" value="AC">
-        <b><label for="ac">AC</label><br></b>
-        <input type="radio" id="Non_ac" name="type" value="Non AC">
-        <b><label for="Non_ac">Non Ac</label><br></b>
+    
     
 
 

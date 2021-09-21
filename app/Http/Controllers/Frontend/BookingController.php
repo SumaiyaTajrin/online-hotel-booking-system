@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Booking;
-use App\Models\Roomtype;
+use App\Models\Room;
 
 
 class BookingController extends Controller
 {
-    public function booking()
+    public function booking($id)
     {
-        $roomtypes=Roomtype::all();
+        $room=Room::find($id);
       
-        return view('frontend.layouts.booking', compact( 'roomtypes'));
+        return view('frontend.layouts.booking', compact( 'room'));
     }
     public function bookingformpost( Request $request)
     {
@@ -22,8 +22,7 @@ class BookingController extends Controller
             'first_name'=>$request->name,
             'last_name'=>$request->name,
             'email'=>$request->email,
-            'roomtype_id'=>$request->roomtype_id,
-            
+            'room_id'=>$request->room_id,
             'check_in_date'=>$request->check_in_date,
             'check_out_date'=>$request->check_out_date,
             'type'=>$request->type,

@@ -45,7 +45,7 @@
               <button type="button" class="btn btn-outline-primary">Home</button></a></li>
 	          <li class="nav-item active"><a href="{{route('room')}}" class="nav-link">
             <button type="button" class="btn btn-outline-primary">Rooms</button></a></li>
-	          <li class="nav-item"><a href="{{route('booking')}}" class="nav-link">
+	          <li class="nav-item"><a href="" class="nav-link">
             <button type="button" class="btn btn-outline-primary">Booking</button></a></li>
 	          <li class="nav-item"><a href="{{route('about')}}" class="nav-link">
             <button type="button" class="btn btn-outline-primary">About</button></a></li>
@@ -86,11 +86,15 @@
           		</div>
           		<div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
               <b><h2><div class="room_name">{{$roomtypes->roomtype->name}}<span>- (10 Available rooms)</span></h2></b>
+              <b><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></b>
+
+              <b><div><p>Room Type: <span class="type">{{$roomtypes->type}} </span></div></b></p>
+              <b><div> <p>No Of Accomodate: <span class="type">{{$roomtypes->no_accomodate}}</span></div></b></p>
               </div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
     						<div class="d-md-flex mt-5 mb-5">
     							<ul class="list">
-	    							<li><span>Max:</span> 3 Persons</li>
+	    							
 	    							<li><span>Size:</span> 45 m2</li>
 	    						</ul>
 	    						<ul class="list ml-md-5">
@@ -101,9 +105,9 @@
     						</div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
           		</div>
-          		<b><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></b>
+          		
               <br></br>
-              <a href="{{route('booking' )}}" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Book Now </span></a>
+              <a href="{{route('booking',$roomtypes->id )}}" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Book Now </span></a>
              <br></br>
 
               

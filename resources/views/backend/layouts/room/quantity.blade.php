@@ -11,6 +11,7 @@
             <th scope="col">Room image</th>
             <th scope="col">Roomtype Name</th>
             <th scope="col">Room Number</th>
+            <th scope="col">Room Type</th>
             <th scope="col">Accomodate</th>
             <th scope="col">Amount</th>
 
@@ -24,6 +25,7 @@
             </td>
             <td>{{$room->roomtype->name}}</td>
             <td>{{$room->room_number}} </td>
+            <td>{{$room->type}} </td>
             <td>{{$room->no_accomodate}} </td>
             <td>{{$room->amount}} .BDT</td>
     </tr>
@@ -64,6 +66,15 @@
     <input required name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
     
   </div>
+
+  <b> <p>Type</p></b>
+        <input type="radio" id="AC" name="type" value="AC">
+        <b><label for="ac">AC</label><br></b>
+        <input type="radio" id="Non_ac" name="type" value="Non AC">
+        <b><label for="Non_ac">Non Ac</label><br></b>
+
+
+
        <div class="form-group">
     <label for="amount">Amount</label>
     <input required name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">

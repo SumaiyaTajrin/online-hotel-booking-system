@@ -49,7 +49,7 @@ Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
 
 // frontend booking
-Route::get('/booking',[FrontendBooking::class,'booking'])->name('booking');
+Route::get('/booking/{id}',[FrontendBooking::class,'booking'])->name('booking');
 Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
 
 

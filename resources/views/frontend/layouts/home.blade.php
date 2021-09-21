@@ -8,7 +8,8 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-12 pr-1 aside-stretch">
-    				<form action="{{route('search')}}" method="get" class="booking-form">
+    				<form action="" method="get" class="booking-form">
+						@csrf
 	        		<div class="row">
 	        			<div class="col-md d-flex py-md-4">
 	        				<div class="form-group align-self-stretch d-flex align-items-end">
@@ -42,11 +43,11 @@
 									@endforeach
 			                    </select>
 			                  </div>
-				              </div>
+				               </div>
 				            </div>
-		              </div>
-	        			</div>
-	        			<div class="col-md d-flex py-md-4">
+		              <!-- </div>
+	        			</div>  -->
+	        			<!-- <div class="col-md d-flex py-md-4">
 	        				<div class="form-group align-self-stretch d-flex align-items-end">
 	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
 			      					<label for="#">Guests</label>
@@ -64,8 +65,8 @@
 			                  </div>
 				              </div>
 				            </div>
-		              </div>
-	        			</div>
+		              </div> -->
+	        			<!-- </div> -->
 	        			<div class="col-md d-flex">
 	        				<div class="form-group d-flex align-self-stretch">
 							<button  type="submit" class="btn btn-primary">Check Availibility</button>
@@ -220,8 +221,8 @@
 					<div class="img"><img width="400px" src="{{url('uploads/'.$data->image)}}"></div>
     					<div class="half left-arrow d-flex align-items-center">
     						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">{{$data->amount}} BDT</span> <span class="per">per night</span></p>
+    							
+    							
 	    						<h3 class="mb-3"><a href="rooms.html">{{$data->name}}</a></h3>
 								
 	    						<p class="pt-1"><a href="{{route('allroom' ,$data->id)}}" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>

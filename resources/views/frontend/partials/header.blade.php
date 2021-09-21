@@ -17,12 +17,7 @@
 	          <li class="nav-item"><a href="{{route('room')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-light">Rooms</button>
 			</a></li>
-			  <!-- <li class="nav-item"><a href="{{route('booking')}}" class="nav-link">
-			  <button type="button" class="btn btn-outline-primary">Booking</button></a></li> -->
-			  <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-			  <li class="nav-item"><a href="restaurant.html" class="nav-link">Blog</a></li> -->
-			  <!-- <li class="nav-item"><a href="" class="nav-link">
-			  <button type="button" class="btn btn-outline-light">Payment</button></a></li> -->
+			
 
 
 			  @if(auth()->user())

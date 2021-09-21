@@ -31,7 +31,7 @@
   <tbody>
   @foreach($roomtypes as $roomtype)
     <tr>
-      < <th scope="row">{{$roomtype->id}}</th>
+      <th scope="row">{{$roomtype->id}}</th>
       <td>
                 <img src="{{url('/uploads/'.$roomtype->image)}}" width="100px" alt="roomtype image">
             </td>

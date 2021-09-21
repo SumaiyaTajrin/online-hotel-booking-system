@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Booking;
-use App\Models\Roomtype;
+use App\Models\Room;
 
 
 
@@ -13,10 +13,10 @@ class BookingController extends Controller
 {
     public function list()
     {
-        $bookings=Booking::with('roomtype')->paginate(2);
-        $roomtypes=Roomtype::all();
+        $bookings=Booking::paginate(2);
+        $room=Room::all();
         
-        return view('backend.layouts.booking.list', compact('bookings', 'roomtypes'));
+        return view('backend.layouts.booking.list', compact('bookings', 'room'));
     }
     public function delete($id)
     {
