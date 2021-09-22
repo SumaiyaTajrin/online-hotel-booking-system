@@ -60,7 +60,7 @@ Route::get('/room/{id}/details',[FrontendRoom::class,'details'])->name('room.det
 Route::get('/allroom/{id}',[FrontendRoom::class,'allroomview'])->name('allroom');
 
 // search
-Route::get('/search',[SearchController::class,'search'])->name('search');
+Route::post('/date-range-search',[SearchController::class,'dateSearch'])->name('date.search');
 
 // frontend login
 Route::get('/login',[UserController::class,'login'])->name('guest.login');

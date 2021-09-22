@@ -8,7 +8,7 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-12 pr-1 aside-stretch">
-    				<form action="" method="get" class="booking-form">
+    				<form action="{{route('date.search')}}" method="post" class="booking-form">
 						@csrf
 	        		<div class="row">
 	        			<div class="col-md d-flex py-md-4">

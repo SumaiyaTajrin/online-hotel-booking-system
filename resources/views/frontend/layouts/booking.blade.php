@@ -29,7 +29,7 @@
     </div>
    
 
-
+    <input type="hidden" id="room_id" name="room_id" value="{{$room->id}}">
       
     
     <div class="form-group col-md-6">
