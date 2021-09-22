@@ -33,7 +33,7 @@ class UserController extends Controller
         'contact_no'=>$request->contact_no,
         'address'=>$request->address,
      ]);
-     return redirect()->back()->with('success','User Registration Successful.');
+     return redirect()->route('guest.login')->with('success','User Registration Successful.');
     }
 
     public function login()
@@ -47,7 +47,7 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials))
         {
-            return redirect()->route('home');
+            return redirect()->intended();
             //user logged in
         }
         return redirect()->back()->with('message','invalid user info.');

@@ -19,10 +19,9 @@ class SearchController extends Controller
 
         $room_ids=collect($bookings)->pluck('room_id')->toArray();
 
-        $available=Room::whereNotIn('id',$room_ids)->get();
+        $rooms=Room::whereNotIn('id',$room_ids)->get();
 
-        $rooms=Room::all();
-        return view('frontend.layouts.allroom-view', compact('available','rooms'));
+        return view('frontend.layouts.allroom-view', compact('rooms'));
 
     }
 }

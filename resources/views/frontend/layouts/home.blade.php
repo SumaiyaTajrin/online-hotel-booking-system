@@ -30,47 +30,15 @@
 	        			<div class="col-md d-flex py-md-4">
 	        				<div class="form-group align-self-stretch d-flex align-items-end">
 	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
-			      					<label for="#">Room</label>
-			      					<div class="form-field">
-			        					<div class="select-wrap">
-			                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-			                    <select type= "text" name="" id="" class="form-control">
-                                 @foreach($roomtypes  as $roomtype)
-			                    	<option value="{{$roomtype->id}}">
-									{{$roomtype->name}}
-									</option>
-			                      
-									@endforeach
-			                    </select>
+								<div class="col-md d-flex">
+	        				<div class="form-group d-flex align-self-stretch">
+							<h6><button  type="submit" class="btn btn-primary">Check Availibility</button></h6>
+			            </div>
 			                  </div>
 				               </div>
 				            </div>
-		              <!-- </div>
-	        			</div>  -->
-	        			<!-- <div class="col-md d-flex py-md-4">
-	        				<div class="form-group align-self-stretch d-flex align-items-end">
-	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
-			      					<label for="#">Guests</label>
-			      					<div class="form-field">
-			        					<div class="select-wrap">
-			                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-			                    <select name="" id="" class="form-control">
-			                    	<option value="">1 Adult</option>
-			                      <option value="">2 Adult</option>
-			                      <option value="">3 Adult</option>
-			                      <option value="">4 Adult</option>
-			                      <option value="">5 Adult</option>
-			                      <option value="">6 Adult</option>
-			                    </select>
-			                  </div>
-				              </div>
-				            </div>
-		              </div> -->
-	        			<!-- </div> -->
-	        			<div class="col-md d-flex">
-	        				<div class="form-group d-flex align-self-stretch">
-							<button  type="submit" class="btn btn-primary">Check Availibility</button>
-			            </div>
+		              
+	        			
 	        			</div>
 	        		</div>
 	        	</form>

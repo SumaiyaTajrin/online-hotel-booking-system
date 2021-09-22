@@ -49,8 +49,7 @@ Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
 
 // frontend booking
-Route::get('/booking/{id}',[FrontendBooking::class,'booking'])->name('booking');
-Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
+
 
 
 
@@ -70,9 +69,11 @@ Route::post('/login/post',[UserController::class,'doLogin'])->name('guest.do.log
 Route::get('/signup',[UserController::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupformpost'])->name('user.signup.store');
 
-Route::group(['prefix'=>'customer','middleware'=>'auth'],function (){
+Route::group(['prefix'=>'customer','middleware'=>'frontauth'],function (){
 
-  
+  Route::get('/booking/{id}',[FrontendBooking::class,'booking'])->name('booking');
+  Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
+
   Route::get('/logout',[UserController::class,'logout'])->name('guest.logout');
 });
 
@@ -88,40 +89,40 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
   Route::group(['middleware'=>'role'],function (){
 
-Route::get('/contact',[ HomeController::class,'contact']);
-Route::get('/posts',[ PostController::class,'list'])->name('post.list');
+          Route::get('/contact',[ HomeController::class,'contact']);
+          Route::get('/posts',[ PostController::class,'list'])->name('post.list');
 
-Route::get('/hotel',[ HotelController::class,'info'])->name('hotel.info');
-Route::post('/hotel/store',[ HotelController::class,'store'])->name('hotel.store');
+          Route::get('/hotel',[ HotelController::class,'info'])->name('hotel.info');
+          Route::post('/hotel/store',[ HotelController::class,'store'])->name('hotel.store');
 
-Route::get('/rooms',[ RoomController::class,'quantity'])->name('room.quantity');
-Route::post('/rooms/store',[ RoomController::class,'store'])->name('room.store');
+          Route::get('/rooms',[ RoomController::class,'quantity'])->name('room.quantity');
+          Route::post('/rooms/store',[ RoomController::class,'store'])->name('room.store');
 
-Route::get('/categories',[ CategoryController::class,'list'])->name('category.list');
-Route::post('/categories/store',[ CategoryController::class,'store'])->name('category.store');
-
-
-
-Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
-Route::get('/bookings/delete/{id}',[ BookingController::class,'delete'])->name('booking.delete');
+          Route::get('/categories',[ CategoryController::class,'list'])->name('category.list');
+          Route::post('/categories/store',[ CategoryController::class,'store'])->name('category.store');
 
 
-// roomtype
-Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
-Route::get('/roomtype/delete/{id}',[ RoomtypeController::class,'delete'])->name('roomtype.delete');
-Route::get('/roomtype/edit/{id}',[ RoomtypeController::class,'edit'])->name('roomtype.edit');
-Route::put('/roomtype/update/{id}',[ RoomtypeController::class,'update'])->name('roomtype.update');
-Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
-Route::get('/roomtype/{id}/room',[RoomtypeController::class,'allRoom'])->name('roomtype.room');
+
+          Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
+          Route::get('/bookings/delete/{id}',[ BookingController::class,'delete'])->name('booking.delete');
 
 
-Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
+          // roomtype
+          Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');
+          Route::get('/roomtype/delete/{id}',[ RoomtypeController::class,'delete'])->name('roomtype.delete');
+          Route::get('/roomtype/edit/{id}',[ RoomtypeController::class,'edit'])->name('roomtype.edit');
+          Route::put('/roomtype/update/{id}',[ RoomtypeController::class,'update'])->name('roomtype.update');
+          Route::post('/roomtype/store',[ RoomtypeController::class,'store'])->name('roomtype.store');
+          Route::get('/roomtype/{id}/room',[RoomtypeController::class,'allRoom'])->name('roomtype.room');
 
 
-Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');
+          Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
 
-Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
-Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
+
+          Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');
+
+          Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
+          Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 
 });
 
