@@ -22,6 +22,7 @@ class CreateRoomsTable extends Migration
             $table->string('image')->nullable();
             $table->double('amount',15,2)->default(0.00);
             $table->text('description')->nullable();
+            
             $table->timestamps();
         });
     }

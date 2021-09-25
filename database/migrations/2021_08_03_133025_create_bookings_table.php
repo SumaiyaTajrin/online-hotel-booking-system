@@ -18,6 +18,7 @@ class CreateBookingsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->integer('room_id');
+            $table->integer('user_id');
             $table->timestamp('email_verified_at')->nullable();
             $table->date('from_date');
             $table->date('to_date');
@@ -25,6 +26,7 @@ class CreateBookingsTable extends Migration
             $table->string('room_quantity');
             $table->string('contact_no');
             $table->string('address');
+            $table->string('status',10)->default('pending');
             $table->timestamps();
         });
     }

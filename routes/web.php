@@ -48,7 +48,7 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
 
-// frontend booking
+
 
 
 
@@ -71,6 +71,8 @@ Route::post('/signup/store',[UserController::class,'signupformpost'])->name('use
 
 Route::group(['prefix'=>'customer','middleware'=>'frontauth'],function (){
 
+
+  // frontend booking
   Route::get('/booking/{id}',[FrontendBooking::class,'booking'])->name('booking');
   Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
 

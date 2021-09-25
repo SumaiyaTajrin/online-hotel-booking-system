@@ -8,10 +8,14 @@
 
     <div>
       <p>
-        <label for="">Room Name: {{$room->room_number}}</label><br>
-        <label for="">Room Id: {{$room->id}}</label></br>
+    
+        <label for="">Room Number: {{$booking->room->room_number}}</label><br>
+        <label for="">Room Id: {{$booking->room->id}}</label>
+        <label for="">User Id: {{$booking->user->id}}</label>
+       </br>
       </p>
     </div>
+   
     <br></br>
 
 
@@ -29,8 +33,8 @@
     </div>
    
 
-    <input type="hidden" id="room_id" name="room_id" value="{{$room->id}}">
-      
+    <input type="hidden" id="room_id" name="room_id" value="{{$booking->id}}">
+    
     
     <div class="form-group col-md-6">
     <b><label for="check_in_date">Check In Date</label></b>

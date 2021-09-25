@@ -23,6 +23,7 @@
       <th scope="col">Room Quantity</th>
       <th scope="col">Contact No</th>
       <th scope="col">Address</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
       
     </tr>
@@ -40,6 +41,7 @@
       <td>{{$data->room_quantity}}</td>
       <td>{{$data->contact_no}}</td>
       <td>{{$data->address}}</td>
+      <td>{{$data->status}} </td>
       <td><a href="" class="btn btn-info">edit</a><br>
 </br>
      <a onclick="return confirm('Are you sure you want to delete this booking?');"href="{{route('booking.delete',$data->id)}}" class="btn btn-danger">delete</a></td>

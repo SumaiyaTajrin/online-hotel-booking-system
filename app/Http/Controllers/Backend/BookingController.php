@@ -15,7 +15,7 @@ class BookingController extends Controller
     {
         $bookings=Booking::paginate(2);
         $room=Room::all();
-        
+     
         return view('backend.layouts.booking.list', compact('bookings', 'room'));
     }
     public function delete($id)

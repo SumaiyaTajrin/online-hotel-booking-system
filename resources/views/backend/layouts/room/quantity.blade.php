@@ -14,6 +14,7 @@
             <th scope="col">Room Type</th>
             <th scope="col">Accomodate</th>
             <th scope="col">Amount</th>
+            <th scope="col">Status</th>
 
   </thead>
   <tbody>
@@ -28,6 +29,7 @@
             <td>{{$room->type}} </td>
             <td>{{$room->no_accomodate}} </td>
             <td>{{$room->amount}} .BDT</td>
+            <td>{{$room->status}} </td>
     </tr>
     @endforeach
   </tbody>

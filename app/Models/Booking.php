@@ -11,12 +11,17 @@ class Booking extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function roomtype()
+
+
+
+    public function user()
     {
-        //who->relation name->to whom
-        // 1 to  1 dependent =belongsTo
-        // 1 to 1 not dependent = hasOne
-        return $this->belongsTo(Roomtype::class);
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class, 'room_id','id');
     }
     
 }

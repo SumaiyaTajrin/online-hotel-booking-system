@@ -20,7 +20,7 @@ class CreateRoomtypesTable extends Migration
             $table->text('description')->nullable();
             $table->double('amount',15,2)->default(0.00);
             $table->string('image')->nullable();
-            $table->string('status',10)->default('active');
+            $table->string('status',10)->default('pending');
             $table->timestamps();
         });
     }
