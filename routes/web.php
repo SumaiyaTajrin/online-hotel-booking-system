@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\BookingController as FrontendBooking;
 
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\RoomtypeController;
+use App\Http\Controllers\Frontend\GuestdetailsController;
 
 use App\Http\Controllers\Backend\BookingController;
 
@@ -48,7 +49,7 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
 
-
+Route::get('customer/booking/details',[GuestdetailsController::class,'customerdetails'])->name('details');
 
 
 
@@ -106,7 +107,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 
           Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
-          Route::get('/bookings/delete/{id}',[ BookingController::class,'delete'])->name('booking.delete');
+          Route::get('/disapprove-booking/{id}',[ BookingController::class,'disapprove'])->name('booking.disapprove');
+          Route::get('/approve-booking/{id}',[ BookingController::class,'approve'])->name('booking.approve');
 
 
           // roomtype

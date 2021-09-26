@@ -18,16 +18,22 @@ class BookingController extends Controller
      
         return view('backend.layouts.booking.list', compact('bookings', 'room'));
     }
-    public function delete($id)
+
+
+    public function approve($id)
     {
-        // Roomtype::destroy($id);
-        $bookings=Booking::find($id);
-        if($bookings)
-        {
-            $bookings->delete();
-            return redirect()->back()->with('message','booking deleted successfully');
-        }
-        return redirect()->back()->with('message','No booking found to delete.');
-        
+    Booking::find($id)->update([
+    'status'=>'Booked'
+    ]);
+    return redirect()->route('booking.list')->with('message','booking approved sucessfully'); 
+    }
+
+
+    public function  disapprove($id)
+    {
+     Booking::find($id)->update([
+    'status'=>'disapprove'
+    ]);
+    return redirect()->back()->with('message','booking disapproved sucessfully'); 
     }
 }

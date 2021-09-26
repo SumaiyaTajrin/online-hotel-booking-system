@@ -24,4 +24,7 @@ class SearchController extends Controller
         return view('frontend.layouts.allroom-view', compact('rooms'));
 
     }
+
+
+    
 }

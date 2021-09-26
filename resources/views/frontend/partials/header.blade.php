@@ -21,11 +21,19 @@
 
 
 			  @if(auth()->user())
-             <a class="nav-item nav-link" href="{{route('guest.logout')}}">
-			<button type="button" class="btn btn-outline-light">logout</button></a>
-            <a class="nav-item nav-link" href="">
-			<button type="button" class="btn btn-outline-light">{{auth()->user()->name}}</button>
-			</a>
+			  <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>{{auth()->user()->name}}</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                        
+                        <li><a class="dropdown-item" href="{{route('details')}}">My Booking Details</a></li>
+                        <li><a class="dropdown-item" href="{{route('guest.logout')}}">Logout</a></li>
+                    </ul>
+			 
+			 
+			 
+			  
             @else
 	          <li class="nav-item"><a href="{{route('user.signup')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-light">Signup</button>

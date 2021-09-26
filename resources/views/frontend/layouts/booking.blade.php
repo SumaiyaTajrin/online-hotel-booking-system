@@ -9,9 +9,9 @@
     <div>
       <p>
     
-        <label for="">Room Number: {{$booking->room->room_number}}</label><br>
-        <label for="">Room Id: {{$booking->room->id}}</label>
-        <label for="">User Id: {{$booking->user->id}}</label>
+        <label for="">Room Number: {{$rooms->room_number}}</label><br>
+        <label for="">Room Id: {{$rooms->id}}</label>
+
        </br>
       </p>
     </div>
@@ -24,16 +24,16 @@
   
     <div class="form-group col-md-6">
      <b> <label for="name">Name</label></b>
-      <input required name="name" type="text" class="form-control" id="name" placeholder="Enter Name">
+      <input required value="{{auth()->user()->name}}" name="name" type="text" class="form-control" id="name" placeholder="Enter Name">
     </div>
     
     <div class="form-group col-md-6">
      <b> <label for="email">Email</label></b>
-      <input required name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
+      <input required value="{{auth()->user()->email}}" name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
     </div>
    
 
-    <input type="hidden" id="room_id" name="room_id" value="{{$booking->id}}">
+    <input type="hidden" id="room_id" name="room_id" value="{{$rooms->id}}">
     
     
     <div class="form-group col-md-6">
