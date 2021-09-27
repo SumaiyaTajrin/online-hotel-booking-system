@@ -26,7 +26,7 @@ class CreateBookingsTable extends Migration
             $table->string('room_quantity');
             $table->string('contact_no');
             $table->string('address');
-            $table->string('status',10)->default('pending');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

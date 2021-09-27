@@ -15,7 +15,8 @@ class CreateAmenitiesTable extends Migration
     {
         Schema::create('amenities', function (Blueprint $table) {
             $table->id();
-            $table->string('type', 100);
+            $table->string('name');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -17,13 +17,18 @@
 	          <li class="nav-item"><a href="{{route('room')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-light">Rooms</button>
 			</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">
+			  <button type="button" class="btn btn-outline-light">Our Service</button>
+			</a></li>
 			
 
 
 			  @if(auth()->user())
 			  <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>{{auth()->user()->name}}</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw">
+					<button type="button" class="btn btn-outline-light">{{auth()->user()->name}}</button>
+					</i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                         

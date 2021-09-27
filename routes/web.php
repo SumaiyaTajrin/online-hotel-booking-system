@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookingController as FrontendBooking;
 
 use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\AmenitiesController;
 use App\Http\Controllers\Backend\RoomtypeController;
 use App\Http\Controllers\Frontend\GuestdetailsController;
 
@@ -49,7 +50,7 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/about',[FrontendHome::class,'about'])->name('about');
 
 
-Route::get('customer/booking/details',[GuestdetailsController::class,'customerdetails'])->name('details');
+Route::get('customer/booking/details',[GuestdetailsController::class,'guestdetails'])->name('details');
 
 
 
@@ -109,6 +110,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
           Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
           Route::get('/disapprove-booking/{id}',[ BookingController::class,'disapprove'])->name('booking.disapprove');
           Route::get('/approve-booking/{id}',[ BookingController::class,'approve'])->name('booking.approve');
+          Route::get('/approvelist',[ BookingController::class,'approvelist'])->name('approve.list');
+          Route::get('/disapprovelist',[ BookingController::class,'disapprovelist'])->name('disapprove.list');
 
 
           // roomtype
@@ -121,6 +124,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 
           Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
+
+          Route::get('/amenities',[ AmenitiesController::class,'list'])->name('amenities.list');
+          Route::post('/amenities/store',[ AmenitiesController::class,'store'])->name('amenities.store');
 
 
           Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');

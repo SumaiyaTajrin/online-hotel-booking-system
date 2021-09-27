@@ -5,7 +5,7 @@
 <h1>Guest List</h1>
 <table class="table">
   <thead>
-    <tr>
+    <tr class="table-danger">
     <th scope="col">#</th>
             <th scope="col">User Name</th>
             <th scope="col">Email</th>

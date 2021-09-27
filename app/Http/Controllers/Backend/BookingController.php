@@ -36,4 +36,17 @@ class BookingController extends Controller
     ]);
     return redirect()->back()->with('message','booking disapproved sucessfully'); 
     }
+
+
+    public function approvelist()
+    {
+          $bookings=Booking::with('room')->where('status','Booked')->get();
+         return view('backend.layouts.booking.approvelist',compact('bookings'));
+    }
+
+    public function disapprovelist()
+    {
+          $bookings=Booking::with('room')->where('status','disapprove')->get();
+         return view('backend.layouts.booking.disapprovelist',compact('bookings'));
+    }
 }

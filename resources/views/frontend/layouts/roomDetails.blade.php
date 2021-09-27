@@ -25,6 +25,15 @@
               <h2><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></h2>
 
               <h2><div><p>Room Type: <span class="type">{{$roomtypes->type}} </span></div></h2></p>
+
+<!-- amenities here -->
+
+
+@foreach($roomtypes->roomamenities as $data)
+
+<span class="badge alert-success">{{$data->amenity->name}}</span>
+@endforeach
+
               <h2><div> <p>No Of Accomodate: <span class="type">{{$roomtypes->no_accomodate}}</span></div></h2></p>
               </div>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>

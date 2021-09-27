@@ -10,10 +10,10 @@ use App\Models\Booking;
 
 class GuestdetailsController extends Controller
 {
-    public function customerdetails()
+    public function guestdetails()
     {
         
-        $bookings=Booking::where('user_id',auth()->user()->id)->get();
+        $bookings=Booking::where('user_id',auth()->user()->id) ->get();
         return view('frontend.layouts.booking-details', compact('bookings'));
     }
 }

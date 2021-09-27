@@ -2,13 +2,9 @@
 
 @section('content')
 
-<h1>booking list</h1>
-<br><br>
-@if(session()->has('message'))
-        <div class="row" style="padding: 10px;">
-            <span class="alert alert-success">{{session()->get('message')}}</span>
-        </div>
-    @endif
+<h1>Approved Booking List</h1>
+
+
 
 <table class="table">
   <thead>
@@ -24,7 +20,7 @@
       <th scope="col">Contact No</th>
       <th scope="col">Address</th>
       <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      
       
     </tr>
   </thead>
@@ -42,13 +38,11 @@
       <td>{{$data->contact_no}}</td>
       <td>{{$data->address}}</td>
       <td>{{$data->status}} </td>
-      <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br>
-</br>
-     <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a></td>
+     
     </tr>
     @endforeach
 
   </tbody>
 </table>
-{{$bookings->links('pagination::bootstrap-4')}}
+
 @endsection

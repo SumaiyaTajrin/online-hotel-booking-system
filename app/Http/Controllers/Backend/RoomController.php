@@ -6,21 +6,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Roomtype;
+use App\Models\Amenities;
+
+use App\Models\Roomamenities;
 
 class RoomController extends Controller
 {
     public function quantity()
     {
-        $rooms=Room::with('roomtype')->paginate(4);
+         
+        $rooms=Room::with('roomtype','roomamenities')->paginate(4);
         $roomtypes=Roomtype::all();
-        
-//        dd($products);
-        return view('backend.layouts.room.quantity',compact('rooms', 'roomtypes'));
+        $amenities=Amenities::all();
+
+        return view('backend.layouts.room.quantity',compact('rooms', 'roomtypes','amenities'));
     }
 
     public function store( Request $request)
     {
 
+ 
       $request->validate([
         'roomtype_id'=>'required',
         'room_number'=>'required|unique:rooms',
@@ -36,17 +41,27 @@ class RoomController extends Controller
         $file->storeAs('/uploads',$fileName);
     }
        // dd($request->all());
-         Room::create([
+         $room=Room::create([
           'roomtype_id'=>$request->roomtype_id,
+          // 'amenities_id'=>$request->amenities_id,
           'room_number'=>$request->room_number,
           'type'=>$request->type,
           'amount'=>$request->amount,
           'no_accomodate'=>$request->accomodate,
           'description'=>$request->description,
           'image'=>$fileName
-       
-
           ]);
+
+
+          foreach($request->amenities_id as $am)
+          {
+            
+            Roomamenities::create([
+              'room_id'=>$room->id,
+              'amenities_id'=>$am
+            ]);
+
+          }
 
         return redirect()->back();
 

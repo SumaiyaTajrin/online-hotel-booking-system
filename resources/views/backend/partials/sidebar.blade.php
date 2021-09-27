@@ -77,14 +77,20 @@
             <nav class="sb-sidenav-menu-nested nav">
                                     
             <a class="nav-link" href="{{route('booking.list')}}">Booking List</a>
-            <a class="nav-link" href="">Approved List</a>
-            <a class="nav-link" href="">Disapproved List</a>
+            <a class="nav-link" href="{{route('approve.list')}}">Approved List</a>
+            <a class="nav-link" href="{{route('disapprove.list')}}">Disapproved List</a>
                                     
             </nav>
             </div>
             </li>
 
-
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('amenities.list')}}">
+            <span data-feather="users"></span>
+            Amenities
+            </a>
+          </li> 
            <li class="nav-item">
             <a class="nav-link" href="{{route('payment.list')}}">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">

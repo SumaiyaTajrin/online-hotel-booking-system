@@ -8,7 +8,7 @@
   Enter Details
 </button>
 </div>
-
+<br>
 @if(session()->has('message'))
         <div class="row" style="padding: 10px;">
             <span class="alert alert-success">{{session()->get('message')}}</span>
@@ -18,7 +18,7 @@
 
 <table class="table">
   <thead>
-    <tr>
+    <tr class="table-danger">
       <th scope="col">#</th>
       <th scope="col">Room image</th>
       <th scope="col">Name</th>
