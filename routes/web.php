@@ -48,7 +48,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/about',[FrontendHome::class,'about'])->name('about');
-
+Route::get('/service',[FrontendHome::class,'service'])->name('service');
 
 Route::get('customer/booking/details',[GuestdetailsController::class,'guestdetails'])->name('details');
 
@@ -125,11 +125,20 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
           Route::get('/reports',[ ReportController::class,'list'])->name('report.list');
 
+
+          // amenities
           Route::get('/amenities',[ AmenitiesController::class,'list'])->name('amenities.list');
           Route::post('/amenities/store',[ AmenitiesController::class,'store'])->name('amenities.store');
+          Route::get('/amenities/delete/{id}',[ AmenitiesController::class,'delete'])->name('amenities.delete');
+          Route::get('/amenities/edit/{id}',[ AmenitiesController::class,'edit'])->name('amenities.edit');
+          Route::put('/amenities/update/{id}',[ AmenitiesController::class,'update'])->name('amenities.update');
 
 
-          Route::get('/payments',[ PaymentController::class,'list'])->name('payment.list');
+
+         
+         
+          Route::get('/payments/list',[ PaymentController::class,'list'])->name('payment.list');
+          Route::post('/payments/store',[ PaymentController::class,'details'])->name('payment.details');
 
           Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
           Route::get('/users',[BackendUser::class,'userList'])->name('user.list');

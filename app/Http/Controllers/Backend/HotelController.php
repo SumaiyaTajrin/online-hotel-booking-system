@@ -25,7 +25,9 @@ class HotelController extends Controller
             $checkInfo->update([
                 'name'=>$request->hotel_name,
                 'address'=>$request->address,
-                'contact_no'=>$request->contact_no
+                'contact_no'=>$request->contact_no,
+                'email'=>$request->email,
+                'city'=>$request->city
             ]);
            
         }else{
@@ -33,7 +35,9 @@ class HotelController extends Controller
             Hotel::create([
                 'name'=>$request->hotel_name,
                 'address'=>$request->address,
-                'contact_no'=>$request->contact_no
+                'contact_no'=>$request->contact_no,
+                'email'=>$request->email,
+                'city'=>$request->city
             ]);
         }
 

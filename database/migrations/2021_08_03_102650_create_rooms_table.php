@@ -18,10 +18,9 @@ class CreateRoomsTable extends Migration
             $table->integer('room_number')->unique();
             $table->string('type',40)->nullable();
             $table->string('roomtype_id', 100);
-            $table->string('amenities_id', 100);
             $table->integer('no_accomodate')->default(0);
             $table->string('image')->nullable();
-            $table->double('amount',15,2)->default(0.00);
+            $table->string('amount',15,2)->default(0.00);
             $table->text('description')->nullable();
             
             $table->timestamps();

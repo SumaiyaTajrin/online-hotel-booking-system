@@ -5,7 +5,7 @@
 <h1>room list</h1>
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Enter Details
 </button>
-
+<br></br>
 <table class="table">
   <thead>
   <tr class="table-danger">

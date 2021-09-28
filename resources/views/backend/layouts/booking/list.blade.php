@@ -42,8 +42,9 @@
       <td>{{$data->contact_no}}</td>
       <td>{{$data->address}}</td>
       <td>{{$data->status}} </td>
-      <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br>
-</br>
+      <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br></br>
+      <td><a href="{{route('payment.list')}}" class="btn btn-info">Payment</a><br></br>
+
      <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a></td>
     </tr>
     @endforeach

@@ -2,36 +2,25 @@
 
 @section('content')
 
-<h1>Payment list</h1>
+<h1>Enter Details</h1>
+<form action="{{route('payment.details')}}" method="post">
+    @csrf
+    <div class="form-group col-md-6">
+      <label for="method">Method</label>
+      <input required name="method" type="text" class="form-control" id="method" placeholder="Enter method" >  
+    </div>  
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input required name="amount" type="text" class="form-control" id="amount" placeholder="Enter Amount" > 
+  </div>
+  <div class="form-group">
+    <label for="comments">Comments</label>
+    <input required name="comments"type="text" class="form-control" id="comments" placeholder="Give comments" >
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 @endsection

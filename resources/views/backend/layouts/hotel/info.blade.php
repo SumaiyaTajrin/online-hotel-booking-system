@@ -7,18 +7,25 @@
 <form action="{{route('hotel.store')}}" method="post">
     @csrf
     <div class="form-group col-md-6">
-      <label for="name">name</label>
-      <input name="hotel_name" type="text" class="form-control" id="name" placeholder="Enter Name" value="{{$checkInfo->name??''}}">  
+      <label for="name">Name</label>
+      <input required name="hotel_name" type="text" class="form-control" id="name" placeholder="Enter Name" value="{{$checkInfo->name??''}}">  
     </div>  
     <!-- null colase operator -->
-    
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input required name="email"type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email" value="{{$checkInfo->email??''}}">
+    </div>
   <div class="form-group">
-    <label for="Address">address</label>
-    <input name="address" type="text" class="form-control" id="Address" placeholder="Enter Address" value="{{$checkInfo->address??''}}"> 
+    <label for="Address">Address</label>
+    <input required name="address" type="text" class="form-control" id="Address" placeholder="Enter Address" value="{{$checkInfo->address??''}}"> 
   </div>
   <div class="form-group">
-    <label for="contact_no">contact_no</label>
-    <input name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No" value="{{$checkInfo->contact_no??''}}">
+    <label for="city">City</label>
+    <input required name="city" type="text" class="form-control" id="city" placeholder="Enter Address" value="{{$checkInfo->city??''}}"> 
+  </div>
+  <div class="form-group">
+    <label for="contact_no">Contact_no</label>
+    <input required name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No" value="{{$checkInfo->contact_no??''}}">
   </div>
   
   

@@ -17,7 +17,7 @@
 	          <li class="nav-item"><a href="{{route('room')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-light">Rooms</button>
 			</a></li>
-			<li class="nav-item"><a href="#" class="nav-link">
+			<li class="nav-item"><a href="{{route('service')}}" class="nav-link">
 			  <button type="button" class="btn btn-outline-light">Our Service</button>
 			</a></li>
 			

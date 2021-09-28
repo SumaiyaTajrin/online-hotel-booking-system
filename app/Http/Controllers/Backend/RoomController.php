@@ -43,7 +43,7 @@ class RoomController extends Controller
        // dd($request->all());
          $room=Room::create([
           'roomtype_id'=>$request->roomtype_id,
-          // 'amenities_id'=>$request->amenities_id,
+         
           'room_number'=>$request->room_number,
           'type'=>$request->type,
           'amount'=>$request->amount,

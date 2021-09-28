@@ -15,10 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('booking_id');
-            $table->integer('customer_id');
-            $table->double('amount',16,2)->default(0.00);
+            $table->string('method');
 
+            $table->string('amount')->default(0.00);
+            $table->string('comments');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

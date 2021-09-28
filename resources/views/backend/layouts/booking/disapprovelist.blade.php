@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Approved Booking List</h1>
+<h1>Disapproved Booking List</h1>
 
 
 

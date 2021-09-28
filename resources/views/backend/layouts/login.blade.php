@@ -50,11 +50,11 @@ body {
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="email" class="text-info">Username:</label><br>
-                                <input name="email" type="email" class="form-control" placeholder="Email">
+                                <input required name="email" type="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control"placeholder="Password" >
+                                <input required type="password" name="password" id="password" class="form-control"placeholder="Password" >
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>

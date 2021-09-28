@@ -27,8 +27,8 @@
   
       <td>{{$data->status}} </td>
       <td>
-            <a href="" class="btn btn-info">edit </a>
-            <a href="" class="btn btn-danger">delete </a>
+            <a href="{{route('amenities.edit',$data->id)}}"  class="btn btn-info">edit </a>
+            <a onclick="return confirm('Are you sure you want to delete this room?');" href="{{route('amenities.delete',$data->id)}}" class="btn btn-danger">delete</a>
            
         </td>
     </tr>
@@ -52,7 +52,7 @@
         @csrf
   <div class="form-group">
     <label for="name">Amenities name</label>
-    <input name= "amenities_name" id= "name"type="text" class="form-control"  placeholder="Enter Amenities">
+    <input required name= "amenities_name" id= "name"type="text" class="form-control"  placeholder="Enter Amenities">
 </div>
 
 
@@ -63,7 +63,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>

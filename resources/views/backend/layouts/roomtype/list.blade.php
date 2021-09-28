@@ -72,22 +72,22 @@
        
        <div class="form-group">
     <label for="name">Name</label>
-    <input name= "name" id= "name"type="text" class="form-control"  placeholder="Enter name">
+    <input required name= "name" id= "name"type="text" class="form-control"  placeholder="Enter name">
     
   
   <div class="form-group">
     <label for="description">description</label>
-    <input name="description" id="description" class="form-control"  placeholder="Enter description">
+    <input required name="description" id="description" class="form-control"  placeholder="Enter description">
   </div>
   
   <div class="form-group">
     <label for="amount">Amount</label>
-    <input name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
+    <input required min="0" name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
     
   </div>
   <div class="form-group">
     <label for="description">Upload room Image</label>
-    <input type="file" class="form-control" name="room_image">
+    <input required type="file" class="form-control" name="room_image">
     </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -95,7 +95,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>
