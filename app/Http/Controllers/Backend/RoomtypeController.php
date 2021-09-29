@@ -18,15 +18,15 @@ class RoomtypeController extends Controller
     }
     public function store( Request $request)
     {
-        // $request->validate([
-        //     'name'=>'required',
+        $request->validate([
+            'name'=>'required',
            
-        //     'amount'=>'required',
-        //     'image'=>'required',
+            'amount'=>'required',
+            'room_image'=>'required',
            
 
 
-        // ]);
+        ]);
        
 
         $fileName='';

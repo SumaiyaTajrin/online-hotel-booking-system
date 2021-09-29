@@ -44,17 +44,15 @@
       <td>{{$data->status}} </td>
       <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br></br>
      <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a><br></br>
-     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal{{$data->id}}">
+
   Payment
 </button></td>
     </tr>
-    @endforeach
 
-  </tbody>
-</table>
-
+    
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -67,6 +65,8 @@
 
       <form action="{{route('payment.store')}}" method="post" >
         @csrf
+
+        <input type="hidden" value="{{$data->id}}" name="booking_id">
         
       <div class="form-group col-md-6">
       <label for="method">Method</label>
@@ -77,12 +77,21 @@
     <label for="amount">Amount</label>
     <input required min="0" name="amount" type="text" class="form-control" id="amount" placeholder="Enter Amount" > 
   </div>
+
+  <div class="form-group col-md-6">
+      <label for="advance_payment">Advance</label>
+      <input required min="0" name="advance_payment" type="text" class="form-control" id="advance_payment" placeholder="Enter payment" >  
+    </div> 
+    <div class="form-group col-md-6">
+      <label for="due_payment">Due</label>
+      <input required min="0" name="due_payment" type="text" class="form-control" id="due_payment" placeholder="Enter payment" >  
+    </div> 
   <div class="form-group">
     <label for="comments">Comments</label>
     <input required name="comments"type="text" class="form-control" id="comments" placeholder="Give comments" >
   </div>
 
-
+  
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -95,5 +104,10 @@
     </div>
   </div>
 </div>
+    @endforeach
+
+  </tbody>
+</table>
+
 {{$bookings->links('pagination::bootstrap-4')}}
 @endsection
