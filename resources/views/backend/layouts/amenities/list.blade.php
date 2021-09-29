@@ -5,12 +5,12 @@
 <h1>Amenities list</h1>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
   Create New Amenities
-</button>
+</button><br></br>
 <table class="table">
   <thead>
-    <tr>
+    <tr  class="table-danger">
       <th scope="col">Sl</th>
       <th scope="col">Name</th>
       

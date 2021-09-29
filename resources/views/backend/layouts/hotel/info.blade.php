@@ -25,7 +25,7 @@
   </div>
   <div class="form-group">
     <label for="contact_no">Contact_no</label>
-    <input required name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No" value="{{$checkInfo->contact_no??''}}">
+    <input required min="0" name="contact_no"type="number" class="form-control" id="contact_no" placeholder="Enter Contact No" value="{{$checkInfo->contact_no??''}}">
   </div>
   
   

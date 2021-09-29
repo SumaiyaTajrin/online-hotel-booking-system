@@ -9,7 +9,7 @@
 <table class="table">
   <thead>
   <tr class="table-danger">
-  <th scope="col">#</th>
+  <th scope="col">Sl</th>
             <th scope="col">Room image</th>
             <th scope="col">Roomtype Name</th>
             <th scope="col">Amenities Name</th>
@@ -87,7 +87,7 @@
 
        <div class="form-group">
     <label for="room_number">Room Number</label>
-    <input required name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
+    <input required min="0" name= "room_number" id= "room_number"type="number" class="form-control"  placeholder="Enter Room Number">
     
   </div>
 
@@ -101,19 +101,20 @@
 
        <div class="form-group">
     <label for="amount">Amount</label>
-    <input required name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
+    <input required min="0" name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
     
   </div>
 
   <div class="form-group">
     <label for="a">no_accomodate</label>
-    <input required name="accomodate" type="number" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Enter no of accomodate">
+    <input required min="1" name="accomodate" type="number" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Enter no of accomodate">
     
   </div>
    <div class="form-group">
   <label for="d">Description</label>
-            <textarea class="form-control" name="description" id="d" placeholder="Enter Description"></textarea>
+  <textarea class="form-control" name="description" id="d" placeholder="Enter Description"></textarea>
   </div>
+
   <div class="form-group">
     <label for="description">Upload room Image</label>
     <input required type="file" class="form-control" name="room_image">
@@ -123,9 +124,9 @@
 </form> 
 </div>
   <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ 
+  </div>
     </div>
   </div>
 </div>

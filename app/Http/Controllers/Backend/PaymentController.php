@@ -10,20 +10,28 @@ class PaymentController extends Controller
 {
     public function list()
     {
-        $payments=Payment::all();
-        
+        $payments=Payment::all(); 
         return view('backend.layouts.payment.list', compact('payments'));
-
     }
-    public function details ( Request $request)
-    { 
-        
-    Payment::create([
-          'method'=>$request->method,
-          'amount'=>$request->amount,
-          'comments'=>$request->comments,
-          
-     ]);
-   return redirect()->back();
-}
+
     
+    public function paidlist($id)
+    {
+        Payment::find($id)->update([
+    'status'=>'paid'
+    ]);
+    return redirect()->route('payment.list')->with('message','booking approved sucessfully'); 
+    }
+    
+    public function store(Request $request)
+    {
+        Payment::create([
+            'method'=>$request->method,
+            'amount'=>$request->amount,
+            'comments'=>$request->comments,
+        ]);
+
+        return redirect()->route('payment.list');
+    }
+    
+}

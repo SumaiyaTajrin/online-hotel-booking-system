@@ -138,7 +138,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
          
          
           Route::get('/payments/list',[ PaymentController::class,'list'])->name('payment.list');
-          Route::post('/payments/store',[ PaymentController::class,'details'])->name('payment.details');
+          Route::post('/payments/store',[ PaymentController::class,'store'])->name('payment.store');
+          Route::get('/payments/list/{id}',[ PaymentController::class,'paidlist'])->name('payment.paid');
+
 
           Route::get('/guests',[BackendUser::class,'guestList'])->name('guest.list');
           Route::get('/users',[BackendUser::class,'userList'])->name('user.list');

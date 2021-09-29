@@ -5,47 +5,47 @@
 @endsection
 @section('contents')
 <section class="ftco-booking ftco-section ftco-no-pt ftco-no-pb">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-12 pr-1 aside-stretch">
-    				<form action="{{route('date.search')}}" method="post" class="booking-form">
-						@csrf
-	        		<div class="row">
-	        			<div class="col-md d-flex py-md-4">
-	        				<div class="form-group align-self-stretch d-flex align-items-end">
-	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
-				    					<label for="#">Check-in Date</label>
-				    					<input type="text" name="from_date" class="form-control checkin_date" placeholder="Check-in date">
-			    					</div>
-			    				</div>
-	        			</div>
-	        			<div class="col-md d-flex py-md-4">
-	        				<div class="form-group align-self-stretch d-flex align-items-end">
-	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
-				    					<label for="#">Check-out Date</label>
-				    					<input type="text" name="to_date" class="form-control checkout_date" placeholder="Check-out date">
-			    					</div>
-			    				</div>
-	        			</div>
-	        			<div class="col-md d-flex py-md-4">
-	        				<div class="form-group align-self-stretch d-flex align-items-end">
-	        					<div class="wrap bg-white align-self-stretch py-3 px-4">
-								<div class="col-md d-flex">
-	        				<div class="form-group d-flex align-self-stretch">
-							<h6><button  type="submit" class="btn btn-primary">Check Availibility</button></h6>
-			            </div>
-			                  </div>
-				               </div>
-				            </div>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 pr-1 aside-stretch">
+<form action="{{route('date.search')}}" method="post" class="booking-form">
+@csrf
+<div class="row">
+<div class="col-md d-flex py-md-4">
+<div class="form-group align-self-stretch d-flex align-items-end">
+<div class="wrap bg-white align-self-stretch py-3 px-4">
+<label for="#">Check-in Date</label>
+<input type="text" name="from_date" class="form-control checkin_date" placeholder="Check-in date">
+</div>
+</div>
+</div>
+<div class="col-md d-flex py-md-4">
+<div class="form-group align-self-stretch d-flex align-items-end">
+<div class="wrap bg-white align-self-stretch py-3 px-4">
+<label for="#">Check-out Date</label>
+<input type="text" name="to_date" class="form-control checkout_date" placeholder="Check-out date">
+</div>
+</div>
+</div>
+<div class="col-md d-flex py-md-4">
+<div class="form-group align-self-stretch d-flex align-items-end">
+<div class="wrap bg-white align-self-stretch py-3 px-4">
+<div class="col-md d-flex">
+<div class="form-group d-flex align-self-stretch">
+<h6><button  type="submit" class="btn btn-primary">Check Availibility</button></h6>
+</div>
+</div>
+</div>
+</div>
 		              
 	        			
-	        			</div>
-	        		</div>
-	        	</form>
-	    		</div>
-    		</div>
-    	</div>
-    </section>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
 
 
 		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-wrap">
@@ -89,78 +89,7 @@
 			</div>
 		</section>
 
-		<section class="ftco-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Welcome to Sea Shine Hotel</span>
-            <h2 class="mb-4">A New Vision of Luxury Hotel</h2>
-          </div>
-        </div>  
-        <div class="row d-flex">
-          <div class="col-md pr-md-1 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services py-4 d-block text-center">
-              <div class="d-flex justify-content-center">
-              	<div class="icon d-flex align-items-center justify-content-center">
-              		<span class="flaticon-reception-bell"></span>
-              	</div>
-              </div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Friendly Service</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services active py-4 d-block text-center">
-              <div class="d-flex justify-content-center">
-              	<div class="icon d-flex align-items-center justify-content-center">
-              		<span class="flaticon-serving-dish"></span>
-              	</div>
-              </div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Get Breakfast</h3>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md px-md-1 d-flex align-sel Searchf-stretch ftco-animate">
-            <div class="media block-6 services py-4 d-block text-center">
-              <div class="d-flex justify-content-center">
-              	<div class="icon d-flex align-items-center justify-content-center">
-              		<span class="flaticon-car"></span>
-              	</div>
-              </div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Transfer Services</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services py-4 d-block text-center">
-              <div class="d-flex justify-content-center">
-              	<div class="icon d-flex align-items-center justify-content-center">
-              		<span class="flaticon-spa"></span>
-              	</div>
-              </div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Suits &amp; SPA</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md pl-md-1 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services py-4 d-block text-center">
-              <div class="d-flex justify-content-center">
-              	<div class="icon d-flex align-items-center justify-content-center">
-              		<span class="ion-ios-bed"></span>
-              	</div>
-              </div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Cozy Rooms</h3>
-              </div>
-            </div>      
-          </div>
-        </div>
-      </div>
-    </section>
+		
 
     <section class="ftco-section bg-light ftco-room">
     	<div class="container-fluid px-0">

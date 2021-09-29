@@ -1,26 +1,35 @@
 @extends('backend.master')
 
 @section('content')
+<h1>Payment Details</h1>
 
-<h1>Enter Details</h1>
-<form action="{{route('payment.details')}}" method="post">
-    @csrf
-    <div class="form-group col-md-6">
-      <label for="method">Method</label>
-      <input required name="method" type="text" class="form-control" id="method" placeholder="Enter method" >  
-    </div>  
+<table class="table">
+  <thead>
+    <tr class="table-danger">
+      <th scope="col">Sl</th>
+      <th scope="col">Method</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Comments</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($payments as $key=>$data)
+    <tr>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{$data->method}}</td>
+      <td>{{$data->amount}}</td>
+      <td>{{$data->comments}}</td>
+      <td>{{$data->status}}</td>
+      <td><a href="{{route('payment.paid',$data->id)}}" class="btn btn-info">Paid</a><br></br></td>
+      
+    </tr>
+    @endforeach
+    
+  </tbody>
+</table>
 
-  <div class="form-group">
-    <label for="amount">Amount</label>
-    <input required name="amount" type="text" class="form-control" id="amount" placeholder="Enter Amount" > 
-  </div>
-  <div class="form-group">
-    <label for="comments">Comments</label>
-    <input required name="comments"type="text" class="form-control" id="comments" placeholder="Give comments" >
-  </div>
-  
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
 
 @endsection

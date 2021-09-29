@@ -46,22 +46,17 @@
     </div>
 
 
-    
-    
-    
-
-
-    <div class="form-group col-md-6">
+   <div class="form-group col-md-6">
     <b> <label for="no_of_guest">No Of Guest</label></b>
-    <input required name="no_of_guest"type="text" class="form-control" id="no_of_guest" placeholder="Enter Guest No">
+    <input required min="0" name="no_of_guest"type="text" class="form-control" id="no_of_guest" placeholder="Enter Guest No">
     </div>
     <div class="form-group col-md-6">
     <b><label for="room_quantity">Room Quantity</label></b>
-    <input required name="room_quantity"type="number" class="form-control" id="room_quantity" placeholder="Enter room quantity">
+    <input required min="0" name="room_quantity"type="number" class="form-control" id="room_quantity" placeholder="Enter room quantity">
     </div>
     <div class="form-group col-md-6">
     <b> <label for="contact_no">Contact_no</label></b>
-    <input required name="contact_no"type="text" class="form-control" id="contact_no" placeholder="Enter Your Contact No">
+    <input required min="0" name="contact_no"type="text" class="form-control" id="contact_no" placeholder="Enter Your Contact No">
     </div>
     <div class="form-group col-md-6">
     <b> <label for="inputAddress">Address</label></b>

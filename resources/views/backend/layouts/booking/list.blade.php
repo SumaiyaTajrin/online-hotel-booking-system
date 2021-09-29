@@ -43,13 +43,57 @@
       <td>{{$data->address}}</td>
       <td>{{$data->status}} </td>
       <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br></br>
-      <td><a href="{{route('payment.list')}}" class="btn btn-info">Payment</a><br></br>
-
-     <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a></td>
+     <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a><br></br>
+     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+  Payment
+</button></td>
     </tr>
     @endforeach
 
   </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <form action="{{route('payment.store')}}" method="post" >
+        @csrf
+        
+      <div class="form-group col-md-6">
+      <label for="method">Method</label>
+      <input required name="method" type="text" class="form-control" id="method" placeholder="Enter method" >  
+    </div>  
+
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input required min="0" name="amount" type="text" class="form-control" id="amount" placeholder="Enter Amount" > 
+  </div>
+  <div class="form-group">
+    <label for="comments">Comments</label>
+    <input required name="comments"type="text" class="form-control" id="comments" placeholder="Give comments" >
+  </div>
+
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 {{$bookings->links('pagination::bootstrap-4')}}
 @endsection

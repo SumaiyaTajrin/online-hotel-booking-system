@@ -19,11 +19,11 @@
 <table class="table">
   <thead>
     <tr class="table-danger">
-      <th scope="col">#</th>
+      <th scope="col">Sl</th>
       <th scope="col">Room image</th>
       <th scope="col">Name</th>
       <th scope="col">Amount</th>
-      <th scope="col">Status</th>
+     
       <th scope="col">Action</th>
       <!-- <th scope="col"></th> -->
     </tr>
@@ -38,7 +38,7 @@
 
             <td>{{$roomtype->name}}</td>
             <td>{{$roomtype->amount}}</td>
-            <td>{{$roomtype->status}} </td>
+           
             <td>
             <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-info">view room</a>
             <a href="{{route('roomtype.edit',$roomtype->id)}}" class="btn btn-warning">edit</a>

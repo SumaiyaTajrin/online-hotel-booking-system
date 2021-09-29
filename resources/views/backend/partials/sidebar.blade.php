@@ -92,29 +92,18 @@
             </a>
             <li>
 
-            <li>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">
-            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
-            Payment
-           <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            <li class="nav-item">
+            <a class="nav-link" href="{{route('payment.list')}}">
+            <span data-feather="file"></span>
+            Payments
             </a>
-            <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-            <nav class="sb-sidenav-menu-nested nav">
-                                    
-            <a class="nav-link" href="{{route('payment.list')}}"> List</a>
-            <a class="nav-link" href="{{route('payment.details')}}">Payment details</a>
-            <br>
-            
-                                    
-            </nav>
-            </div>
-            </li>
+            <li>
 
 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('report.list')}}">
-            <span data-feather="users"></span>
+            <span data-feather="file"></span>
             Reports
             </a>
           </li> 

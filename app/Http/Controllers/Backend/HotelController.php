@@ -15,7 +15,13 @@ class HotelController extends Controller
      }
      public function store( Request $request)
      {
-
+        // $request->validate([
+        //     'name'=>'required',
+        //     'email'=>'required|email|unique:users,email',
+        //     'city'=>'required',
+        //     'contact_no'=>'required',
+        //     'address'=>'required'
+        // ]);
         $checkInfo=Hotel::first();
       
         if($checkInfo)

@@ -18,6 +18,17 @@ class RoomtypeController extends Controller
     }
     public function store( Request $request)
     {
+        // $request->validate([
+        //     'name'=>'required',
+           
+        //     'amount'=>'required',
+        //     'image'=>'required',
+           
+
+
+        // ]);
+       
+
         $fileName='';
         if($request->hasFile('room_image'))
         {
@@ -27,14 +38,13 @@ class RoomtypeController extends Controller
             $file->storeAs('/uploads',$fileName);
         }
 
-
+        
          Roomtype::create([
              'name'=>$request->name,
             'description'=>$request->description,
                'amount'=>$request->amount,
                'image'=>$fileName
-        //     'address'=>$request->address,
-        //     'contact no'=>$request->contact_no
+        
           ]);
         return redirect()->back();
     }
