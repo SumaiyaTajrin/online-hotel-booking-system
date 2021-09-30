@@ -22,8 +22,11 @@ class CreateBookingsTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->date('from_date');
             $table->date('to_date');
+            $table->string('no_of_days');
             $table->string('no_of_guest');
-            $table->string('room_quantity');
+            
+           
+            $table->string('total_amount');
             $table->string('contact_no');
             $table->string('address');
             $table->string('status')->default('pending');

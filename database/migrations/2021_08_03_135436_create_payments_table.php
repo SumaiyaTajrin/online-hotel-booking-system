@@ -18,10 +18,9 @@ class CreatePaymentsTable extends Migration
             $table->string('method');
             $table->integer('booking_id');
             $table->integer('user_id');
+            $table->string('pay_at');
             
-            $table->string('due_payment');
-            $table->string('advance_payment');
-            $table->string('amount')->default(0.00);
+            $table->string('paid_amount');
             $table->string('comments');
             $table->string('status')->default('pending');
             $table->timestamps();

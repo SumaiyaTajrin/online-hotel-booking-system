@@ -23,10 +23,7 @@ class RoomtypeController extends Controller
            
             'amount'=>'required',
             'room_image'=>'required',
-           
-
-
-        ]);
+              ]);
        
 
         $fileName='';

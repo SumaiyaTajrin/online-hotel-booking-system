@@ -13,7 +13,7 @@ class BookingController extends Controller
 {
     public function list()
     {
-        $bookings=Booking::paginate(4);
+        $bookings=Booking::with('payment')->paginate(10);
         $room=Room::all();
      
         return view('backend.layouts.booking.list', compact('bookings', 'room'));

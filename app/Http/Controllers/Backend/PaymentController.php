@@ -35,12 +35,13 @@ class PaymentController extends Controller
 
         Payment::create([
             'method'=>$request->method,
-            'amount'=>$request->amount,
+            
             'user_id'=>$booking_info->user_id,
             'comments'=>$request->comments,
             'booking_id'=>$request->booking_id,
-            'advance_payment'=>$request->advance_payment,
-            'due_payment'=>$request->due_payment,
+            
+            'paid_amount'=>$request->paid_amount,
+            'pay_at'=>$request->pay_at,
 
         ]);
 
