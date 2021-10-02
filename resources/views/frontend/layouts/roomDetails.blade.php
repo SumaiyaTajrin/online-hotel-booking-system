@@ -19,7 +19,7 @@
 </div>
 </div>
 <div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-<h1><h2><div class="room_name">{{$roomtypes->roomtype->name}}</h2></h>
+<h1><h2><div class="room_name">{{$roomtypes->roomtype->name}}</h2></h1>
 <h2><div> <span class="amount">BDT {{$roomtypes->amount}}</span></div></h2>
 
 <h2><div><p>Room Type: <span class="type">{{$roomtypes->type}} </span></div></h2></p>
@@ -32,7 +32,7 @@
 <h2> Room Includes</h2>
 @foreach($roomtypes->roomamenities as $data)
 
-<span class="badge alert-success">{{$data->amenity->name}}</span>
+<h2><span class="badge alert-success">{{$data->amenity->name}}</span></h2>
 @endforeach
 </div>
 <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>

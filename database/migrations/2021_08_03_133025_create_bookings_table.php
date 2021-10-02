@@ -24,8 +24,6 @@ class CreateBookingsTable extends Migration
             $table->date('to_date');
             $table->string('no_of_days');
             $table->string('no_of_guest');
-            
-           
             $table->string('total_amount');
             $table->string('contact_no');
             $table->string('address');

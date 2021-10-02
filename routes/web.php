@@ -78,6 +78,7 @@ Route::group(['prefix'=>'customer','middleware'=>'frontauth'],function (){
   Route::get('/booking/{id}',[FrontendBooking::class,'booking'])->name('booking');
   Route::post('/booking/store',[FrontendBooking::class,'bookingformpost'])->name('booking.store');
 
+   Route::get('/cancel-booking/{id}',[ BookingController::class,'cancel'])->name('customer.booking.cancel');
   Route::get('/logout',[UserController::class,'logout'])->name('guest.logout');
 });
 
@@ -109,6 +110,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
           Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
           Route::get('/disapprove-booking/{id}',[ BookingController::class,'disapprove'])->name('booking.disapprove');
+          Route::get('/cancel-booking/{id}',[ BookingController::class,'cancel'])->name('booking.cancel');
           Route::get('/approve-booking/{id}',[ BookingController::class,'approve'])->name('booking.approve');
           Route::get('/approvelist',[ BookingController::class,'approvelist'])->name('approve.list');
           Route::get('/disapprovelist',[ BookingController::class,'disapprovelist'])->name('disapprove.list');

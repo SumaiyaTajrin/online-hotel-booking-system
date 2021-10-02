@@ -37,6 +37,15 @@ class BookingController extends Controller
     return redirect()->back()->with('message','booking disapproved sucessfully'); 
     }
 
+    public function  cancel($id)
+    {
+     Booking::find($id)->update([
+    'status'=>'cancel'
+    ]);
+    return redirect()->back()->with('message','booking cancel sucessfully'); 
+    }
+
+
 
     public function approvelist()
     {

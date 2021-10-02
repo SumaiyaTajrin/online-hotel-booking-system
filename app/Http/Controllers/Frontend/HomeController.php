@@ -8,6 +8,7 @@ use App\Models\Roomtype;
 
 
 
+
 class HomeController extends Controller
 {
     public function home()
@@ -18,6 +19,7 @@ class HomeController extends Controller
 
     public function about()
     {
+        
         return view('frontend.layouts.about');
     }
 

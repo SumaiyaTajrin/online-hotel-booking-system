@@ -35,11 +35,9 @@ class PaymentController extends Controller
 
         Payment::create([
             'method'=>$request->method,
-            
             'user_id'=>$booking_info->user_id,
             'comments'=>$request->comments,
             'booking_id'=>$request->booking_id,
-            
             'paid_amount'=>$request->paid_amount,
             'pay_at'=>$request->pay_at,
 

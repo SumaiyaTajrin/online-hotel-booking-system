@@ -4,28 +4,36 @@
     @include('frontend.partials.slider')
 @endsection
 @section('contents')
+
+@if(session()->has('message'))
+        <div class="row" style="padding: 10px;">
+            <span class="alert alert-danger">{{session()->get('message')}}</span>
+        </div>
+    @endif
+
+
 <section class="ftco-booking ftco-section ftco-no-pt ftco-no-pb">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 pr-1 aside-stretch">
-<form action="{{route('date.search')}}" method="post" class="booking-form">
-@csrf
-<div class="row">
+        <div class="container">
+         <div class="row">
+        <div class="col-lg-12 pr-1 aside-stretch">
+                <form action="{{route('date.search')}}" method="post" class="booking-form">
+           @csrf
+          <div class="row">
+              <div class="col-md d-flex py-md-4">
+                 <div class="form-group align-self-stretch d-flex align-items-end">
+                 <div class="wrap bg-white align-self-stretch py-3 px-4">
+                 <label for="#">Check-in Date</label>
+                 <input type="text" name="from_date" class="form-control checkin_date" placeholder="Check-in date">
+            </div>
+           </div>
+        </div>
 <div class="col-md d-flex py-md-4">
-<div class="form-group align-self-stretch d-flex align-items-end">
-<div class="wrap bg-white align-self-stretch py-3 px-4">
-<label for="#">Check-in Date</label>
-<input type="text" name="from_date" class="form-control checkin_date" placeholder="Check-in date">
-</div>
-</div>
-</div>
-<div class="col-md d-flex py-md-4">
-<div class="form-group align-self-stretch d-flex align-items-end">
-<div class="wrap bg-white align-self-stretch py-3 px-4">
-<label for="#">Check-out Date</label>
-<input type="text" name="to_date" class="form-control checkout_date" placeholder="Check-out date">
-</div>
-</div>
+     <div class="form-group align-self-stretch d-flex align-items-end">
+          <div class="wrap bg-white align-self-stretch py-3 px-4">
+                 <label for="#">Check-out Date</label>
+                 <input type="text" name="to_date" class="form-control checkout_date" placeholder="Check-out date">
+            </div>
+     </div>
 </div>
 <div class="col-md d-flex py-md-4">
 <div class="form-group align-self-stretch d-flex align-items-end">
@@ -48,46 +56,6 @@
 </section>
 
 
-		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-wrap">
-			<div class="container">
-				<div class="row no-gutters">
-					<div class="col-md-3">
-						<a href="#" class="services-wrap img align-items-end d-flex" style="background-image: url(frontend/images/room-3.jpg);">
-							<div class="text text-center pb-2">
-								<h3>Special Rooms</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#" class="services-wrap img align-items-end d-flex" style="background-image: url(frontend/images/swimming-pool.jpg);">
-							<div class="text text-center pb-2">
-								<h3>Swimming Pool</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#" class="services-wrap img align-items-end d-flex" style="background-image: url(frontend/images/resto.jpg);">
-							<div class="text text-center pb-2">
-								<h3>Restaurant</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<div class="services-wrap services-overlay img align-items-center d-flex" style="background-image: url(frontend/images/sleep.jpg);">
-							<div class="text text-center pb-2">
-								<h3 class="mb-0">Suites &amp; Rooms</h3>
-								<span>Special Rooms</span>
-								<div class="d-flex mt-2 justify-content-center">
-								<div class="icon">
-									<a href="#"><span class="ion-ios-arrow-forward"></span></a>
-								</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		
 
@@ -134,6 +102,7 @@
     	</div>
     </section>
 
+	
 
     
 @endsection

@@ -36,7 +36,7 @@ class BookingController extends Controller
        $to_date = \Carbon\Carbon::createFromFormat('Y-m-d', $request->check_in_date);
        $from_date = \Carbon\Carbon::createFromFormat('Y-m-d',$request->check_out_date);
        $diff_in_days = $to_date->diffInDays($from_date);
-$total=$diff_in_days*$rooms->amount;
+       $total=$diff_in_days*$rooms->amount;
 
        if(auth()->user()->id !=1)
        {
@@ -52,8 +52,6 @@ $total=$diff_in_days*$rooms->amount;
                     'to_date'=>$request->check_out_date,
                     'no_of_guest'=>$request->no_of_guest,
                     'no_of_days'=> $diff_in_days,
-                    
-                    
                     'contact_no'=>$request->contact_no,
                     'address'=>$request->address,
                     'total_amount'=>$total

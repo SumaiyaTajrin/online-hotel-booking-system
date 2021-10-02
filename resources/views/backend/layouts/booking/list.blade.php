@@ -50,12 +50,24 @@
       <td>{{$data->contact_no}}</td>
       <td>{{$data->address}}</td>
       <td>{{$data->status}} </td>
-      <td><a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br></br>
-     <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to delete this booking?');" class="btn btn-danger">disapproved</a><br></br>
+<td>
+      @if($data->status=='pending')
+      <a href="{{route('booking.approve',$data->id)}}" class="btn btn-info">Approved</a><br></br>
+     <a href="{{route('booking.disapprove',$data->id)}}" onclick="return confirm('Are you sure you want to disapprove this booking?');" class="btn btn-danger">disapproved</a><br></br>
+@endif
+
+     @if($data->status=='Booked')
+     <a href="{{route('booking.cancel',$data->id)}}" onclick="return confirm('Are you sure you want to cancel this booking?');" class="btn btn-danger">cancel</a><br></br>
+@endif
+
+ @if($data->status=='Booked')
      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal{{$data->id}}">
 
   Payment
-</button></td>
+  
+</button>
+@endif
+</td>
     </tr>
 
     
