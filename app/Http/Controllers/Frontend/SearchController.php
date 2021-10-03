@@ -17,6 +17,8 @@ class SearchController extends Controller
         $bookings=Booking::whereBetween('from_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
         ->orWhereBetween('to_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
       ->get();
+
+      
       $data=$bookings->where('status','Booked');
 
     $room_ids=collect($data)->pluck('room_id')->toArray();

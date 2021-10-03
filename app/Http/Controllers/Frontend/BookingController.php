@@ -27,7 +27,7 @@ class BookingController extends Controller
 
     public function bookingformpost( Request $request)
     {
-
+ 
        $rooms=Room::find($request->room_id);
        $isBooked=Booking::where('room_id',$request->room_id)
        ->where('from_date','<=',$request->check_in_date)
@@ -64,7 +64,7 @@ class BookingController extends Controller
             }
     }else
     {
-        return redirect()->back()->with('message','Admin.');
+        return redirect()->back()->with('message','Admin can not book.');
     }
   
 }

@@ -53,11 +53,11 @@
     
     <div class="form-group col-md-6">
     <b> <label for="contact_no">Contact_no</label></b>
-    <input required min="0" name="contact_no"type="text" class="form-control" id="contact_no" placeholder="Enter Your Contact No">
+    <input required value="{{auth()->user()->contact_no}}" min="0" name="contact_no"type="text" class="form-control" id="contact_no" placeholder="Enter Your Contact No">
     </div>
     <div class="form-group col-md-6">
     <b> <label for="inputAddress">Address</label></b>
-    <input required name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Your Address">
+    <input required value="{{auth()->user()->address}}" name="address" type="text" class="form-control" id="inputAddress" placeholder="Enter Your Address">
     </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

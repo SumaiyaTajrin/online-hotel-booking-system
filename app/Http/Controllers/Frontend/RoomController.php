@@ -10,8 +10,8 @@ class RoomController extends Controller
 {
     public function room()
     {
-        $roomtypes=Roomtype::get()->take(10);
-        return view('frontend.layouts.room', compact('roomtypes'));
+        $rooms=Room::get()->take(20);
+        return view('frontend.layouts.room', compact('rooms'));
     }
     
     public function details($id)

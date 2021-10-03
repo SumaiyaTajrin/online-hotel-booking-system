@@ -15,7 +15,7 @@ class RoomController extends Controller
     public function quantity()
     {
          
-        $rooms=Room::with('roomtype','roomamenities')->paginate(4);
+        $rooms=Room::with('roomtype','roomamenities')->paginate(5);
         $roomtypes=Roomtype::all();
         $amenities=Amenities::all();
 

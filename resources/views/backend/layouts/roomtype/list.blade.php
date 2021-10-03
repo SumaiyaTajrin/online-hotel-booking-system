@@ -33,7 +33,7 @@
       <th scope="col">Sl</th>
       <th scope="col">Room image</th>
       <th scope="col">Name</th>
-      <th scope="col">Amount</th>
+     
      
       <th scope="col">Action</th>
       <!-- <th scope="col"></th> -->
@@ -48,7 +48,7 @@
             </td>
 
             <td>{{$roomtype->name}}</td>
-            <td>{{$roomtype->amount}}</td>
+            
            
             <td>
             <a href="{{route('roomtype.room',$roomtype->id)}}" class="btn btn-info">view room</a>
@@ -91,11 +91,7 @@
     <input required name="description" id="description" class="form-control"  placeholder="Enter description">
   </div>
   
-  <div class="form-group">
-    <label for="amount">Amount</label>
-    <input required min="0" name= "amount" id= "amount"type="number" class="form-control"  placeholder="Enter Amount">
-    
-  </div>
+  
   <div class="form-group">
     <label for="description">Upload room Image</label>
     <input required type="file" class="form-control" name="room_image">

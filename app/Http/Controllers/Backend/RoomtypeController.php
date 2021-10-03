@@ -21,7 +21,7 @@ class RoomtypeController extends Controller
         $request->validate([
             'name'=>'required',
            
-            'amount'=>'required',
+            
             'room_image'=>'required',
               ]);
        
@@ -39,7 +39,7 @@ class RoomtypeController extends Controller
          Roomtype::create([
              'name'=>$request->name,
             'description'=>$request->description,
-               'amount'=>$request->amount,
+               
                'image'=>$fileName
         
           ]);
