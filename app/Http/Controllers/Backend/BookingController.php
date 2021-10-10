@@ -58,4 +58,9 @@ class BookingController extends Controller
           $bookings=Booking::with('room')->where('status','disapprove')->get();
          return view('backend.layouts.booking.disapprovelist',compact('bookings'));
     }
+
+
+
+
+
 }

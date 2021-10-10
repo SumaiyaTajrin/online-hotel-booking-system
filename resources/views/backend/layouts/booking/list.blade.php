@@ -66,6 +66,8 @@
   Payment
   
 </button>
+
+ <a href="{{route('invoice',$data->id)}}" class="btn btn-info">Invoice</a>
 @endif
 </td>
     </tr>

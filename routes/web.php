@@ -14,6 +14,8 @@ use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookingController as FrontendBooking;
 
 use App\Http\Controllers\Backend\RoomController;
+
+use App\Http\Controllers\Backend\InvoiceController;
 use App\Http\Controllers\Backend\AmenitiesController;
 use App\Http\Controllers\Backend\RoomtypeController;
 use App\Http\Controllers\Frontend\GuestdetailsController;
@@ -107,7 +109,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
           Route::post('/categories/store',[ CategoryController::class,'store'])->name('category.store');
 
 
-
+          // booking
           Route::get('/bookings',[ BookingController::class,'list'])->name('booking.list');
           Route::get('/disapprove-booking/{id}',[ BookingController::class,'disapprove'])->name('booking.disapprove');
           Route::get('/cancel-booking/{id}',[ BookingController::class,'cancel'])->name('booking.cancel');
@@ -115,6 +117,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
           Route::get('/approvelist',[ BookingController::class,'approvelist'])->name('approve.list');
           Route::get('/disapprovelist',[ BookingController::class,'disapprovelist'])->name('disapprove.list');
 
+
+          Route::get('/bookings/invoice/{id}',[ InvoiceController::class,'invoice'])->name('invoice');
 
           // roomtype
           Route::get('/roomtype',[ RoomtypeController::class,'list'])->name('roomtype.list');

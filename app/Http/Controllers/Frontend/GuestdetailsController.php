@@ -14,6 +14,7 @@ class GuestdetailsController extends Controller
     {
         
         $bookings=Booking::where('user_id',auth()->user()->id) ->get();
+       
         return view('frontend.layouts.booking-details', compact('bookings'));
     }
 }
